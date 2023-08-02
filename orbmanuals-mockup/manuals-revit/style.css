@@ -17,7 +17,6 @@ html {
 body {
   font-family: "Roboto", sans-serif;
   margin: 0;
-  background-color: purple;
 }
 
 a {
@@ -53,7 +52,6 @@ a {
 .card {
   width: 128px;
   height: 80px;
-
   border-top: solid 2px;
   border-color: #8c9e6e;
   /* background: #8c9e6e; */
