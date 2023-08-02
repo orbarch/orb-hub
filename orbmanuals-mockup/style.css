@@ -1,0 +1,129 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300;400;700&family=Roboto:wght@300;500;700;900&display=swap");
+
+/* 100vh scroll fix */
+body {
+  min-height: 100vh;
+  min-height: -webkit-fill-available;
+}
+
+html {
+  height: -webkit-fill-available;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  /* height: 100vh; */
+  /* overflow: hidden; */
+  margin: 0;
+}
+
+a {
+  text-decoration: none;
+}
+
+.orb-logo {
+  width: auto;
+  height: 100px;
+  padding-right: 8px;
+}
+
+.manuals-title {
+  display: flex;
+  align-items: center;
+}
+
+.manuals-title svg {
+  width: auto;
+  height: 60px;
+  padding-right: 12px;
+}
+
+.card-container {
+  display: flex;
+  flex-direction: row;
+  gap: 14px;
+  padding-top: 24px;
+}
+
+.card {
+  width: 190px;
+  height: 254px;
+  background: #f2f2f2;
+  /* background: #8c9e6e; */
+  border-radius: 0.6em;
+  box-shadow: 0.3em 0.3em 0.7em #00000015;
+  transition: border 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  transition: 0.2s ease-in-out;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-between;
+  padding: 18px;
+  color: black;
+}
+
+.card:hover {
+  transform: scale(1.05);
+  color: #fff;
+  background: #8c9e6e;
+}
+
+.card svg {
+  width: auto;
+  height: 60px;
+  padding-bottom: 12px;
+}
+
+.card-title {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.card-title-text {
+  font-weight: 900;
+}
+
+.card-description {
+  font-size: 12px;
+}
+
+footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 14px;
+  color: #fff;
+  background-color: #8c9e6e;
+  height: 40px;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100vw;
+  margin-top: 20px;
+}
+
+footer a:link {
+  color: #fff !important;
+}
+
+footer a:visited {
+  color: #fff !important;
+}
+
+footer a:hover {
+  color: black !important;
+}
+
+footer a {
+  text-decoration: none;
+}
