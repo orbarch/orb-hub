@@ -1,0 +1,268 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300;400;700&family=Roboto:wght@300;500;700;900&display=swap");
+
+* {
+  box-sizing: border-box;
+}
+
+*:focus {
+  outline: none;
+}
+
+.header {
+  font-family: "Roboto", sans-serif;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  /* height: 100vh; */
+  overflow: hidden;
+  /* margin: 0; */
+  /* padding-left: 10vw;
+  padding-right: 10vw; */
+  padding: 22px 10vw;
+}
+
+.header-logo {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.orb-logo {
+  width: 80px;
+  height: 80px;
+  /* padding: 20px; */
+}
+
+.orb-title {
+  font-family: "Roboto Condensed", sans-serif;
+  font-size: 40px;
+  font-weight: 700;
+  padding-left: 8px;
+}
+
+/* search bar */
+@media (max-width: 900px) {
+  .header {
+    flex-direction: column;
+  }
+}
+
+input {
+  width: 400px;
+  background-color: #f5f5f5;
+  color: #242424;
+  padding: 0.15rem 0.5rem;
+  min-height: 40px;
+  border-radius: 4px;
+  outline: none;
+  border: none;
+  line-height: 1.15;
+  box-shadow: 0px 10px 20px -18px;
+}
+
+input:focus {
+  border-bottom: 2px solid #8c9e6e;
+  border-radius: 4px;
+}
+
+.searchbar {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 6px;
+}
+
+.clear-button {
+  border: none;
+  border-radius: 24px;
+  background-color: #f5f5f5;
+  line-height: 0px;
+  width: 26px;
+  height: 26px;
+  box-shadow: 0px 6px 10px -6px;
+}
+
+.clear-button:hover {
+  color: #fff;
+  background-color: rgb(140, 158, 110, 0.8);
+  transition: 0.15s;
+}
+
+.orb-classes {
+  padding-left: 10vw;
+  padding-right: 10vw;
+  padding-bottom: 40px;
+}
+
+.accordion-item {
+  border: none !important;
+}
+
+.accordion-button {
+  border-radius: 6px !important;
+  margin-bottom: 6px !important;
+  background-color: rgb(140, 158, 110, 0.1) !important;
+}
+
+/* accordion title button not collapsed change of color */
+.accordion-button:not(.collapsed) {
+  background: #8c9e6e !important;
+  color: #fff !important;
+}
+
+.accordion-button:hover {
+  background-color: rgb(140, 158, 110, 0.8) !important;
+}
+
+/* accordion chevron arrow invert color */
+.accordion-button:not(.collapsed)::after {
+  filter: brightness(0%) invert(100%);
+}
+
+/* remove title button focus outline */
+.accordion-button:focus {
+  box-shadow: none !important;
+}
+
+.class-title {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.title-text {
+  font-weight: 700;
+}
+
+.title-description {
+  padding-top: 6px;
+  font-size: 12px;
+  /* color: #808080; */
+}
+
+.title-date {
+  font-size: 13px;
+  /* color: #808080; */
+  padding-right: 12px;
+  padding-left: 24px;
+}
+
+video {
+  max-width: 700px;
+  min-width: 240px;
+}
+
+.accordion-body {
+  display: flex;
+  flex-direction: row;
+}
+
+.multiple-videos {
+  display: flex;
+  flex-direction: column;
+}
+
+.multiple-videos video {
+  padding-top: 6px;
+}
+
+.class-description {
+  display: flex;
+  flex-direction: column;
+  padding: 0 16px;
+  justify-content: space-between;
+  font-size: 14px;
+}
+
+.class-description-title {
+  font-weight: 900;
+}
+
+.class-description-title p {
+  margin-bottom: 4px;
+  font-weight: 500;
+}
+
+.class-description-info {
+  font-size: 12px;
+}
+
+.class-description-info .class-resource p {
+  margin-bottom: 2px;
+}
+
+.class-description-info a {
+  color: #8c9e6e;
+  text-decoration: none;
+}
+
+.class-description-info a:hover {
+  text-decoration: underline;
+}
+
+.files-folder {
+  font-size: 40px;
+  color: #8c9e6e;
+}
+
+.files-folder:hover {
+  color: black;
+}
+
+.tom-cruise {
+  width: auto;
+  height: 100px;
+  opacity: 0;
+  border-radius: 6px;
+}
+
+.tom-cruise:hover {
+  opacity: 1;
+  transition: 0.4s;
+}
+
+/* accordion content responsive for mobile or narrow windows */
+@media (max-width: 900px) {
+  .accordion-body {
+    flex-direction: column;
+  }
+
+  video {
+    max-width: 240px;
+    /* min-width: 10px; */
+  }
+}
+
+footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 14px;
+  color: #fff;
+  background-color: #8c9e6e;
+  height: 40px;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100vw;
+  margin-top: 20px;
+}
+
+footer a:link {
+  color: #fff !important;
+}
+
+footer a:visited {
+  color: #fff !important;
+}
+
+footer a:hover {
+  color: black !important;
+}
+
+footer a {
+  text-decoration: none;
+}

@@ -1,0 +1,2992 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="images/favicon-16x16.png" />
+    <link rel="stylesheet" href="style.css" />
+    <title>ORB University</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD"
+      crossorigin="anonymous"
+    />
+    <!-- coded by Miguel Teran -->
+    <!-- ⠀⠀⠀⠀⠀⠀⢀⣤⢤⡄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⢸⣿⠀⠙⢦⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⡠⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⢸⢸⣷⣦⣤⡙⠦⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⡴⠋⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⢸⣽⣴⡄⠙⢿⣦⠈⠢⣄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣠⠾⠋⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⢸⡆⠀⢻⡁⠀⠘⢷⡄⠈⠓⠦⣄⣀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣀⣀⣀⣀⣀⣀⣀⣀⣀⣀⣀⣤⠶⠋⠁⠀⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⢸⡷⣶⣆⠹⢦⡀⠀⢳⣶⡀⢀⠀⠋⠉⠓⠒⠖⠒⠶⠶⢦⣤⣤⣤⣴⣶⡶⢶⡶⠛⠉⠋⠉⠉⠉⠉⠓⠀⠉⠁⠐⠋⠁⠀⠀⠀⣸⠃⠀⠀⠀⠀⠀⠀⠀⠀⣰
+⠀⠀⠀⠀⠀⠀⠀⣿⣅⣿⣷⣨⡙⣦⠈⢳⡀⠈⠄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠉⠿⣽⠓⣴⡏⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠉⠀⠀⠀⠀⠀⠀⠀⠀⢶⠏
+⠀⠀⠀⠀⠀⠀⠀⢹⡟⠷⠦⢷⡈⠙⢷⠀⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⠟⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣀⠀⠀⠀⠀⠀⠀⣿⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⣧⣘⣆⠀⢿⡀⠘⢇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢰⠇⠀⠀⠀⠀⠀⠀⡟⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⢸⢿⠛⠁⠈⠇⠀⠈⠀⠀⠀⡄⠀⡀⠀⠀⠀⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡇⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⣼⡏⢣⠀⠀⠀⠀⠀⠲⣄⠳⣜⣧⠱⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡇⠀
+⠀⠀⠀⠀⠀⠀⠀⣠⡏⠳⢌⠹⢄⡙⢆⡀⠀⠈⠑⠂⠙⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣿⠀
+⠀⠀⠀⠀⠀⠀⣴⠟⠚⠛⠶⢭⣀⡉⠀⠀⠀⢀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣿⠀
+⠀⠀⠀⠀⢠⣞⣡⡾⠓⠀⠀⠀⠀⠙⢣⣤⣾⣿⣿⡿⠿⠿⣶⣤⣄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣿⠀
+⠀⠀⠀⣰⣿⡾⠋⠀⠀⠀⠀⠀⠀⢠⣿⣿⠟⢉⢀⣤⣶⣶⣤⡙⢿⣷⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣠⣤⣶⣶⣶⣖⣢⣀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣿⠀
+⠀⠀⢠⣟⡉⠀⠀⠀⠀⠀⠀⠀⠀⣾⣿⠃⣀⣼⣿⣿⣿⣿⣿⣿⡆⢹⣷⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣠⣴⡿⣿⣍⣷⣶⣄⡀⠉⢻⣷⣄⠤⠀⠀⠀⠀⠀⠀⠀⢻⠀
+⠀⠀⣾⠄⠁⠀⠀⠀⠀⠀⠀⠀⠀⠁⠻⣆⣿⣿⣿⣿⣿⢿⣿⣿⣻⠄⣿⡇⠀⢰⡇⠀⠀⠀⠀⢀⠀⠀⠀⠀⣠⣿⠛⢻⣿⣿⣿⣿⣿⣿⣦⠀⢻⣏⣧⡀⠀⠀⠀⠀⠀⠀⠘⠀
+⠀⢰⠏⠀⠀⠀⠀⠀⠃⠀⠀⠀⠀⠀⠀⠈⠙⠻⠿⣿⣷⣾⣿⡟⠋⣼⣿⠀⢀⣾⠤⠤⠜⠒⠄⢄⣘⡆⠀⠀⣿⣿⠀⣿⣿⣿⣏⣿⣿⣿⣿⡶⢀⣿⠏⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⣿⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠒⠀⠁⢀⣾⠏⢠⡾⠃⠀⠀⠀⠀⠀⠈⠹⣷⠀⢠⣿⣿⠷⣝⣛⣿⣿⣿⣿⣿⣟⣧⠞⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⡟⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠐⠃⠀⣰⠋⢠⣀⠀⣠⣤⣒⢄⠀⠀⠈⠳⠀⠹⠏⠆⠀⠀⠀⠈⠉⠉⠉⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⡇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⡼⠁⠀⣰⠋⠀⠉⠀⠉⠛⢷⣿⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠸⠁⠀⣰⡟⡆⠀⠀⡀⠀⠀⢘⡙⣦⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠸⣽⣯⣀⣀⣁⣉⠀⠀⣰⣦⣿⡇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠃⣟⣿⣿⠈⣠⣿⡿⠿⠏⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠁⢹⣿⣠⣿⠟⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠉⠄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⢹⣿⠙⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣤⡗⠦⣄⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⢀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⢀⣰⣾⣿⣌⠀⢀⡀⠀⠀⠀⠀⠀⠀⠀⠀⢀⡀⣠⣌⣒⠬⣝⣒⠥⠄⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠸⣦⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠠⣠⣦⡀⣀⢀⡀⡀⢨⣦⣤⣶⣾⣿⠿⠟⠿⣷⣦⣌⠳⠒⠒⠲⠶⠤⠦⣔⢤⡉⠻⢷⣯⣝⡶⣏⠙⠂⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⢿⣆⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⢻⢿⣿⣿⣿⣿⡿⣿⢿⣭⡝⢷⣤⣀⣀⡈⣹⣿⣿⣶⣤⣤⣦⣶⣤⣬⣿⣷⣦⣄⠉⠈⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⢿⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠉⢻⣽⣿⡿⢿⠀⢻⣄⢈⠿⠙⣋⣠⡿⠁⡿⢈⣿⠿⠿⣿⣿⣹⡟⠉⠂⠙⢧⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠈⢷⡁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⡹⣧⣼⣧⡀⠹⠿⠷⠶⠿⡟⠁⣼⣃⣸⡇⠿⠛⠉⠉⠁⠀⠀⠀⠀⠀⠙⠦⡀⢄⡀⠀⠀⠀⠀⢀⡀⠀⠀⠀
+⠀⠀⠀⠈⠳⣄⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢻⣝⣿⣬⣿⣿⣿⡏⢻⣶⣾⣾⣫⣿⠟⣥⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠢⡉⠀⠀⢀⡤⠊⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠙⠲⣤⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠩⠭⠭⠽⠦⠼⣿⣿⣿⢭⠿⠿⣿⠟⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⣠⠖⠋⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠉⠑⠲⠤⣀⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠉⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣀⠴⠚⠁⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠉⠓⠶⣄⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠓⠢⠀⠀⠀⠀⠀⠈⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀ -->
+
+    <!-- :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+:::::::::::::::::::::::::::::::::::::::::::::-'    `-::::::::::::::::::
+::::::::::::::::::::::::::::::::::::::::::-'          `::::::::::::::::
+:::::::::::::::::::::::::::::::::::::::-  '   /(_M_)\  `:::::::::::::::
+:::::::::::::::::::::::::::::::::::-'        |       |  :::::::::::::::
+::::::::::::::::::::::::::::::::-         .   \/~V~\/  ,:::::::::::::::
+::::::::::::::::::::::::::::-'             .          ,::::::::::::::::
+:::::::::::::::::::::::::-'                 `-.    .-::::::::::::::::::
+:::::::::::::::::::::-'                  _,,-::::::::::::::::::::::::::
+::::::::::::::::::-'                _,--:::::::::::::::::::::::::::::::
+::::::::::::::-'               _.--::::::::::::::::::::::#####:::::::::
+:::::::::::-'             _.--:::::::::::::::::::::::::::#####:::::####
+::::::::'    ##     ###.-::::::###:::::::::::::::::::::::#####:::::####
+::::-'       ###_.::######:::::###::::::::::::::#####:##########:::####
+:'         .:###::########:::::###::::::::::::::#####:##########:::####
+     ...--:::###::########:::::###:::::######:::#####:##########:::####
+ _.--:::##:::###:#########:::::###:::::######:::#####:#################
+'#########:::###:#########::#########::######:::#####:#################
+:#########:::#############::#########::######:::#######################
+##########:::########################::################################
+##########:::##########################################################
+##########:::##########################################################
+#######################################################################
+#######################################################################
+################################################################# dp ##
+####################################################################### -->
+  </head>
+
+  <body>
+    <div class="header">
+      <div class="header-logo">
+        <img src="images/Transparent-Green-Logo.png" alt="" class="orb-logo" />
+        <div class="orb-title">ORB University</div>
+      </div>
+      <!-- search bar -->
+      <div class="searchbar">
+        <input
+          id="searchbar"
+          onkeyup="search_class()"
+          type="text"
+          name="search"
+          placeholder="Learn something today, for once..."
+        />
+        <!-- search bar -->
+        <button class="clear-button" id="clear-button" onclick="clearSearch()">
+          <ion-icon name="close"></ion-icon>
+        </button>
+      </div>
+    </div>
+
+    <div class="orb-classes">
+      <div class="accordion accordion-flush" id="accordionFlushExample">
+        <!-- insert new item above here -->
+
+        <div class="accordion-item animals">
+          <h2 class="accordion-header" id="flush-heading230726">
+            <button
+              class="accordion-button collapsed"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#flush-collapse230726"
+              aria-expanded="false"
+              aria-controls="flush-collapse230726"
+            >
+              <div class="class-title">
+                <div class="class-titledescription">
+                  <div class="title-text">Design Options</div>
+                  <div class="title-description">
+                    By using Schrödinger's cat as an example, Christian explains
+                    how to use design options in a Revit project, and all of
+                    their ramifications.
+                  </div>
+                </div>
+
+                <div class="title-date">23/07/26</div>
+              </div>
+            </button>
+          </h2>
+          <div
+            id="flush-collapse230726"
+            class="accordion-collapse collapse"
+            aria-labelledby="flush-heading230726"
+          >
+            <div class="accordion-body">
+              <video controls width="720">
+                <source
+                  src="file:///T:/Orb/ORB%20Resource%20Library/ORB%20University/2023%20ORB%20U/230726%20Design%20Options/Revit%20University-20230727_000533-Meeting%20Recording-cut-merged-1690502303595.mp4"
+                  type="video/mp4"
+                />
+              </video>
+              <div class="class-description">
+                <div class="class-description-title"></div>
+                <div class="class-description-info">
+                  <div class="presented-by">Presented by:</div>
+                  <div class="class-author">Christian Quintero</div>
+                  <div class="class-resource">Resource files:</div>
+                  <div>
+                    <div>
+                      <a
+                        href="files/2023-orb-u/230726 Design Options/~$Revit University - Design Options.pptx"
+                        >Lesson slides</a
+                      >
+                    </div>
+                    <div>
+                      <a
+                        href="files/2023-orb-u/230726 Design Options/230726 Design Options.zip"
+                        >Lesson Revit practice file</a
+                      >
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="accordion-item animals">
+          <h2 class="accordion-header" id="flush-heading230719">
+            <button
+              class="accordion-button collapsed"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#flush-collapse230719"
+              aria-expanded="false"
+              aria-controls="flush-collapse230719"
+            >
+              <div class="class-title">
+                <div class="class-titledescription">
+                  <div class="title-text">Temporary Structures</div>
+                  <div class="title-description">
+                    Andrés describes how to use Temporary Structures in Revit,
+                    to helps us provide a quick and efficient way to lay out the
+                    architectural program.
+                  </div>
+                </div>
+
+                <div class="title-date">23/07/19</div>
+              </div>
+            </button>
+          </h2>
+          <div
+            id="flush-collapse230719"
+            class="accordion-collapse collapse"
+            aria-labelledby="flush-heading230719"
+          >
+            <div class="accordion-body">
+              <video controls width="720">
+                <source
+                  src="files/2023-orb-u/230719 Temporary Structures/Revit University - Temporary Structures & Site Planning-20230719_160213-Meeting Recording.mp4"
+                  type="video/mp4"
+                />
+              </video>
+              <div class="class-description">
+                <div class="class-description-title"></div>
+                <div class="class-description-info">
+                  <div class="presented-by">Presented by:</div>
+                  <div class="class-author">Andrés Fernández</div>
+                  <div class="class-resource">Resource files:</div>
+                  <div>
+                    <div>
+                      <a
+                        href="files/2023-orb-u/230719 Temporary Structures/Revit University - Temporary Structures.pptx"
+                        >Lesson slides</a
+                      >
+                    </div>
+                    <div>
+                      <a
+                        href="files/2023-orb-u/230719 Temporary Structures/ORB Temporary Structures.rvt"
+                        >Lesson Revit practice file</a
+                      >
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item animals">
+          <h2 class="accordion-header" id="flush-heading230712">
+            <button
+              class="accordion-button collapsed"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#flush-collapse230712"
+              aria-expanded="false"
+              aria-controls="flush-collapse230712"
+            >
+              <div class="class-title">
+                <div class="class-titledescription">
+                  <div class="title-text">Running a Meeting</div>
+                  <div class="title-description">
+                    Nicole provides key insights on effectively running a
+                    meeting.
+                  </div>
+                </div>
+
+                <div class="title-date">23/07/12</div>
+              </div>
+            </button>
+          </h2>
+          <div
+            id="flush-collapse230712"
+            class="accordion-collapse collapse"
+            aria-labelledby="flush-heading230712"
+          >
+            <div class="accordion-body">
+              <div class="class-description">
+                <div class="class-description-title"></div>
+                <div class="class-description-info">
+                  <div class="presented-by">Presented by:</div>
+                  <div class="class-author">Nicole Kimble</div>
+                  <div class="class-resource">Resource files:</div>
+                  <div>
+                    <a
+                      href="files/2023-orb-u/230712 Running a Meeting/Running a meeting.pdf"
+                      >Running a Meeting guidelines</a
+                    >
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item animals">
+          <h2 class="accordion-header" id="flush-heading230531">
+            <button
+              class="accordion-button collapsed"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#flush-collapse230531"
+              aria-expanded="false"
+              aria-controls="flush-collapse230531"
+            >
+              <div class="class-title">
+                <div class="class-titledescription">
+                  <div class="title-text">
+                    Copy Monitor for Consultants Models
+                  </div>
+                  <div class="title-description">
+                    In this session, Christian talks about model coordination
+                    between different disciplines, and how to monitor certain
+                    elements within the model.
+                  </div>
+                </div>
+
+                <div class="title-date">23/05/24</div>
+              </div>
+            </button>
+          </h2>
+          <div
+            id="flush-collapse230531"
+            class="accordion-collapse collapse"
+            aria-labelledby="flush-heading230531"
+          >
+            <div class="accordion-body">
+              <video controls width="720">
+                <source
+                  src="files/2023-orb-u/230531 Copy Monitor/Revit University-20230601_000910-Meeting Recording.mp4"
+                  type="video/mp4"
+                />
+              </video>
+              <div class="class-description">
+                <div class="class-description-title"></div>
+                <div class="class-description-info">
+                  <div class="presented-by">Presented by:</div>
+                  <div class="class-author">Christian Quintero</div>
+                  <div class="class-resource">Resource files:</div>
+                  <div>
+                    <a
+                      href="files/2023-orb-u/230531 Copy Monitor/Lesson practice.zip"
+                      >Lesson practice files</a
+                    >
+                  </div>
+                  <div>
+                    <a
+                      href="files/2023-orb-u/230531 Copy Monitor/Revit University - Copy Monitor.pptx"
+                      >Lesson slides</a
+                    >
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item animals">
+          <h2 class="accordion-header" id="flush-heading230524">
+            <button
+              class="accordion-button collapsed"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#flush-collapse230524"
+              aria-expanded="false"
+              aria-controls="flush-collapse230524"
+            >
+              <div class="class-title">
+                <div class="class-titledescription">
+                  <div class="title-text">Autodesk Construction Cloud</div>
+                  <div class="title-description">
+                    During the session, Christian, provides us with a
+                    comprehensive walkthrough of Autodesk Construction Cloud
+                    (ACC) by explaining its fundamental concepts, features, and
+                    functionalities in detail.
+                  </div>
+                </div>
+
+                <div class="title-date">23/05/24</div>
+              </div>
+            </button>
+          </h2>
+          <div
+            id="flush-collapse230524"
+            class="accordion-collapse collapse"
+            aria-labelledby="flush-heading230524"
+          >
+            <div class="accordion-body">
+              <video controls width="720">
+                <source
+                  src="files/2023-orb-u/230524 Autodesk Construction Cloud/Revit University-20230525_000124-Meeting Recording.mp4"
+                  type="video/mp4"
+                />
+              </video>
+              <div class="class-description">
+                <div class="class-description-title"></div>
+                <div class="class-description-info">
+                  <div class="presented-by">Presented by:</div>
+                  <div class="class-author">Christian Quintero</div>
+                  <div class="class-resource">Resource files:</div>
+                  <div>
+                    <a
+                      href="files/2023-orb-u/230524 Autodesk Construction Cloud/Revit Model Project Startup.pdf"
+                      >Project Startup Manual</a
+                    >
+                  </div>
+                  <div>
+                    <a
+                      href="files/2023-orb-u/230524 Autodesk Construction Cloud/Revit University - Build.pptx"
+                      >Lesson slides</a
+                    >
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item animals">
+          <h2 class="accordion-header" id="flush-heading230517">
+            <button
+              class="accordion-button collapsed"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#flush-collapse230517"
+              aria-expanded="false"
+              aria-controls="flush-collapse230517"
+            >
+              <div class="class-title">
+                <div class="class-titledescription">
+                  <div class="title-text">
+                    Revit Keynotes Management & Dynamo Scripts
+                  </div>
+                  <div class="title-description">
+                    Andrés shows us how to manage keynotes correctly, and how to
+                    use Dynamo scripts to automate time consuming tasks.
+                  </div>
+                </div>
+
+                <div class="title-date">23/05/17</div>
+              </div>
+            </button>
+          </h2>
+          <div
+            id="flush-collapse230517"
+            class="accordion-collapse collapse"
+            aria-labelledby="flush-heading230517"
+          >
+            <div class="accordion-body">
+              <video controls width="720">
+                <source
+                  src="files/2023-orb-u/230517 Keynotes management and Dynamo scripts/Revit University-20230517_234637-Meeting Recording.mp4"
+                  type="video/mp4"
+                />
+              </video>
+              <div class="class-description">
+                <div class="class-description-title"></div>
+                <div class="class-description-info">
+                  <div class="presented-by">Presented by:</div>
+                  <div class="class-author">Andrés Fernández</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item animals">
+          <h2 class="accordion-header" id="flush-heading230510">
+            <button
+              class="accordion-button collapsed"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#flush-collapse230510"
+              aria-expanded="false"
+              aria-controls="flush-collapse230510"
+            >
+              <div class="class-title">
+                <div class="class-titledescription">
+                  <div class="title-text">Revit Garden Style Project Setup</div>
+                  <div class="title-description">
+                    Andrés teach us how to setup a garden style project in Revit
+                    correctly.
+                  </div>
+                </div>
+
+                <div class="title-date">23/05/03</div>
+              </div>
+            </button>
+          </h2>
+          <div
+            id="flush-collapse230510"
+            class="accordion-collapse collapse"
+            aria-labelledby="flush-heading230510"
+          >
+            <div class="accordion-body">
+              <video controls width="720">
+                <source
+                  src="files/2023-orb-u/230510 Revit Garden Style Project Set up/Revit University-20230511_000209-Meeting Recording.mp4"
+                  type="video/mp4"
+                />
+              </video>
+              <div class="class-description">
+                <div class="class-description-title"></div>
+                <div class="class-description-info">
+                  <div class="presented-by">Presented by:</div>
+                  <div class="class-author">Andrés Fernández</div>
+                  <div class="class-resource">Resource files:</div>
+                  <a
+                    href="files/2023-orb-u/230510 Revit Garden Style Project Set up/Revit Garden Style Project Set-up.pdf"
+                    >Setup pdf guide</a
+                  >
+                  <div>
+                    <a
+                      href="files/2023-orb-u/230510 Revit Garden Style Project Set up/Revit University - Garden Projects.pptx"
+                      >Lesson slides</a
+                    >
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item animals">
+          <h2 class="accordion-header" id="flush-heading230503">
+            <button
+              class="accordion-button collapsed"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#flush-collapse230503"
+              aria-expanded="false"
+              aria-controls="flush-collapse230503"
+            >
+              <div class="class-title">
+                <div class="class-titledescription">
+                  <div class="title-text">
+                    Dynamo Scripts & Revised Detail Library
+                  </div>
+                  <div class="title-description">
+                    Andrés shows the updated detail library, as well the
+                    assemblies catalogue. Christian shows a stepy-by-step of how
+                    to use Dynamo scripts to make new sheets.
+                  </div>
+                </div>
+
+                <div class="title-date">23/05/03</div>
+              </div>
+            </button>
+          </h2>
+          <div
+            id="flush-collapse230503"
+            class="accordion-collapse collapse"
+            aria-labelledby="flush-heading230503"
+          >
+            <div class="accordion-body">
+              <video controls width="720">
+                <source
+                  src="files/2023-orb-u/230503 Dynamo Scripts and  Revised Detail Livrary/ORBRevit University-20230504_000108-Meeting Recording.mp4"
+                  type="video/mp4"
+                />
+              </video>
+              <div class="class-description">
+                <div class="class-description-title"></div>
+                <div class="class-description-info">
+                  <div class="presented-by">Presented by:</div>
+                  <div class="class-author">
+                    Andrés Fernández & Christian Quintero
+                  </div>
+                  <div class="class-resource">Resource files:</div>
+                  <a
+                    href="files/2023-orb-u/230503 Dynamo Scripts and  Revised Detail Livrary/ORB Assemblies 2023.pdf"
+                    >Assemblies catalogue</a
+                  >
+                  <div>
+                    <a
+                      href="files/2023-orb-u/230503 Dynamo Scripts and  Revised Detail Livrary/230503-dynamo scripts.zip"
+                      >Revit files</a
+                    >
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item animals">
+          <h2 class="accordion-header" id="flush-heading2304262">
+            <button
+              class="accordion-button collapsed"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#flush-collapse2304262"
+              aria-expanded="false"
+              aria-controls="flush-collapse2304262"
+            >
+              <div class="class-title">
+                <div class="class-titledescription">
+                  <div class="title-text">Toilets clearances</div>
+                  <div class="title-description">
+                    Gonzalo talks about the dimensions to use with toilets
+                    clearances.
+                  </div>
+                </div>
+
+                <div class="title-date">23/04/26</div>
+              </div>
+            </button>
+          </h2>
+          <div
+            id="flush-collapse2304262"
+            class="accordion-collapse collapse"
+            aria-labelledby="flush-heading2304262"
+          >
+            <div class="accordion-body">
+              <video controls width="720">
+                <source
+                  src="files/2023-orb-u/230425 Toilets clearances/ORB University-20230427_001713-Meeting Recording.mp4"
+                  type="video/mp4"
+                />
+              </video>
+              <div class="class-description">
+                <div class="class-description-title"></div>
+                <div class="class-description-info">
+                  <div class="presented-by">Presented by:</div>
+                  <div class="class-author">Gonzalo Fierros</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item animals">
+          <h2 class="accordion-header" id="flush-heading230426">
+            <button
+              class="accordion-button collapsed"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#flush-collapse230426"
+              aria-expanded="false"
+              aria-controls="flush-collapse230426"
+            >
+              <div class="class-title">
+                <div class="class-titledescription">
+                  <div class="title-text">City Responses</div>
+                  <div class="title-description">
+                    Andrés talks about how to get along with city reviwers.
+                  </div>
+                </div>
+
+                <div class="title-date">23/04/26</div>
+              </div>
+            </button>
+          </h2>
+          <div
+            id="flush-collapse230426"
+            class="accordion-collapse collapse"
+            aria-labelledby="flush-heading230426"
+          >
+            <div class="accordion-body">
+              <video controls width="720">
+                <source
+                  src="files/2023-orb-u/230425 City responses/ORB University-20230427_001713-Meeting Recording.mp4"
+                  type="video/mp4"
+                />
+              </video>
+              <div class="class-description">
+                <div class="class-description-title"></div>
+                <div class="class-description-info">
+                  <div class="presented-by">Presented by:</div>
+                  <div class="class-author">Andrés Fernández</div>
+                  <div class="class-resource">Resource files:</div>
+                  <a
+                    href="files/2023-orb-u/230425 City responses/ORB University - City Responses.pptx"
+                    ><ion-icon name="folder" class="files-folder"></ion-icon
+                  ></a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item animals">
+          <h2 class="accordion-header" id="flush-heading230311">
+            <button
+              class="accordion-button collapsed"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#flush-collapse230311"
+              aria-expanded="false"
+              aria-controls="flush-collapse230311"
+            >
+              <div class="class-title">
+                <div class="class-titledescription">
+                  <div class="title-text">
+                    Site Planning 101 - Revit Practice
+                  </div>
+                  <div class="title-description">
+                    Andrés guide us through the principles of modeling a site
+                    plan in Revit.
+                  </div>
+                </div>
+
+                <div class="title-date">23/04/11</div>
+              </div>
+            </button>
+          </h2>
+          <div
+            id="flush-collapse230311"
+            class="accordion-collapse collapse"
+            aria-labelledby="flush-heading230311"
+          >
+            <div class="accordion-body">
+              <video controls width="720">
+                <source
+                  src="files/2023-orb-u/230411 Site Planning/Revit University-20230413_000908-Meeting Recording.mp4"
+                  type="video/mp4"
+                />
+              </video>
+              <div class="class-description">
+                <div class="class-description-title"></div>
+                <div class="class-description-info">
+                  <div class="presented-by">Presented by:</div>
+                  <div class="class-author">Andrés Fernández & Tim Rice</div>
+                  <div class="class-resource">Resource files:</div>
+                  <a
+                    href="files/2023-orb-u/230411 Site Planning/230413 site planning.zip"
+                    ><ion-icon name="folder" class="files-folder"></ion-icon
+                  ></a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item animals">
+          <h2 class="accordion-header" id="flush-heading230329">
+            <button
+              class="accordion-button collapsed"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#flush-collapse230329"
+              aria-expanded="false"
+              aria-controls="flush-collapse230329"
+            >
+              <div class="class-title">
+                <div class="class-titledescription">
+                  <div class="title-text">Site Planning 101</div>
+                  <div class="title-description">
+                    "Every project starts as a site". Tim & Peter introduce us
+                    all the items involved in creating a site plan.
+                  </div>
+                </div>
+
+                <div class="title-date">23/03/29</div>
+              </div>
+            </button>
+          </h2>
+          <div
+            id="flush-collapse230329"
+            class="accordion-collapse collapse"
+            aria-labelledby="flush-heading230329"
+          >
+            <div class="accordion-body">
+              <video controls width="720">
+                <source
+                  src="files/2023-orb-u/230329 Site Planning/ORB University-20230330_000711-Meeting Recording.mp4"
+                  type="video/mp4"
+                />
+              </video>
+              <div class="class-description">
+                <div class="class-description-title"></div>
+                <div class="class-description-info">
+                  <div class="presented-by">Presented by:</div>
+                  <div class="class-author">Tim Rice & Peter Gormley</div>
+                  <div class="class-resource">Resource files:</div>
+                  <a
+                    href="files/2023-orb-u/230329 Site Planning/ORB_University_SITE PLANNING 101.pptx"
+                    ><ion-icon name="folder" class="files-folder"></ion-icon
+                  ></a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item animals">
+          <h2 class="accordion-header" id="flush-heading230322">
+            <button
+              class="accordion-button collapsed"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#flush-collapse230322"
+              aria-expanded="false"
+              aria-controls="flush-collapse230322"
+            >
+              <div class="class-title">
+                <div class="class-titledescription">
+                  <div class="title-text">
+                    Payment application and certificate for payment
+                  </div>
+                  <div class="title-description">
+                    Carlos guide us through the whole process of a payment
+                    application from a contractor, and what does it involve.
+                  </div>
+                </div>
+
+                <div class="title-date">23/03/22</div>
+              </div>
+            </button>
+          </h2>
+          <div
+            id="flush-collapse230322"
+            class="accordion-collapse collapse"
+            aria-labelledby="flush-heading230322"
+          >
+            <div class="accordion-body">
+              <video controls width="720">
+                <source
+                  src="files/2023-orb-u/230322 Payment application and certificate for payment/ORB University-20230323_000542-Meeting Recording.mp4"
+                  type="video/mp4"
+                />
+              </video>
+              <div class="class-description">
+                <div class="class-description-title"></div>
+                <div class="class-description-info">
+                  <div class="presented-by">Presented by:</div>
+                  <div class="class-author">Carlos Roman</div>
+                  <div class="class-resource">Resource files:</div>
+                  <a
+                    href="files/2023-orb-u/230322 Payment application and certificate for payment/230322.zip"
+                    ><ion-icon name="folder" class="files-folder"></ion-icon
+                  ></a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item animals">
+          <h2 class="accordion-header" id="flush-heading230315">
+            <button
+              class="accordion-button collapsed"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#flush-collapse230315"
+              aria-expanded="false"
+              aria-controls="flush-collapse230315"
+            >
+              <div class="class-title">
+                <div class="class-titledescription">
+                  <div class="title-text">Intelligent Details</div>
+                  <div class="title-description">
+                    Andrés shows us different intelligent details to use in our
+                    Revit projects.
+                  </div>
+                </div>
+
+                <div class="title-date">23/03/15</div>
+              </div>
+            </button>
+          </h2>
+          <div
+            id="flush-collapse230315"
+            class="accordion-collapse collapse"
+            aria-labelledby="flush-heading230315"
+          >
+            <div class="accordion-body">
+              <video controls width="720">
+                <source
+                  src="files/2023-orb-u/230315 Intelligent Details/ORB University-20230315_234650-Meeting Recording.mp4"
+                  type="video/mp4"
+                />
+              </video>
+              <div class="class-description">
+                <div class="class-description-title"></div>
+                <div class="class-description-info">
+                  <div class="presented-by">Presented by:</div>
+                  <div class="class-author">Andrés Fernández</div>
+                  <div class="class-resource">Resource files:</div>
+                  <a
+                    href="files/2023-orb-u/230315 Intelligent Details/Intelligent Details.pdf"
+                    ><ion-icon name="folder" class="files-folder"></ion-icon
+                  ></a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item animals">
+          <h2 class="accordion-header" id="flush-heading230308">
+            <button
+              class="accordion-button collapsed"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#flush-collapse230308"
+              aria-expanded="false"
+              aria-controls="flush-collapse230308"
+            >
+              <div class="class-title">
+                <div class="class-titledescription">
+                  <div class="title-text">Creating a Survey file</div>
+                  <div class="title-description">
+                    Christian teach us how to create a survey file from scratch
+                    using CAD backgrounds from consultants.
+                  </div>
+                </div>
+
+                <div class="title-date">23/03/08</div>
+              </div>
+            </button>
+          </h2>
+          <div
+            id="flush-collapse230308"
+            class="accordion-collapse collapse"
+            aria-labelledby="flush-heading230308"
+          >
+            <div class="accordion-body">
+              <video controls width="720">
+                <source
+                  src="files/2023-orb-u/230308 Creating a Survey file/Revit University-20230308_235533-Meeting Recording.mp4"
+                  type="video/mp4"
+                />
+              </video>
+              <div class="class-description">
+                <div class="class-description-info">
+                  <div class="presented-by">Presented by:</div>
+                  <div class="class-author">Christian Quintero</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item animals">
+          <h2 class="accordion-header" id="flush-heading230222">
+            <button
+              class="accordion-button collapsed"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#flush-collapse230222"
+              aria-expanded="false"
+              aria-controls="flush-collapse230222"
+            >
+              <div class="class-title">
+                <div class="class-titledescription">
+                  <div class="title-text">Chapter 7 Review</div>
+                  <div class="title-description">
+                    Nicole summarizes the scope of Chapter 7 of the IBC.
+                  </div>
+                </div>
+
+                <div class="title-date">23/02/08</div>
+              </div>
+            </button>
+          </h2>
+          <div
+            id="flush-collapse230222"
+            class="accordion-collapse collapse"
+            aria-labelledby="flush-heading230222"
+          >
+            <div class="accordion-body">
+              <video controls width="720">
+                <source
+                  src="files/2023-orb-u/230222 Chapter 7 Review/230222 ORB University-20230222_234834-Meeting Recording.mp4"
+                  type="video/mp4"
+                />
+              </video>
+              <div class="class-description">
+                <div class="class-description-info">
+                  <div class="presented-by">Presented by:</div>
+                  <div class="class-author">Nicole Kimble</div>
+                  <div class="class-resource">Resource files:</div>
+                  <a
+                    href="files/2023-orb-u/230222 Chapter 7 Review/230222-chapter7review.zip"
+                    ><ion-icon name="folder" class="files-folder"></ion-icon
+                  ></a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item animals">
+          <h2 class="accordion-header" id="flush-heading230215">
+            <button
+              class="accordion-button collapsed"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#flush-collapse230215"
+              aria-expanded="false"
+              aria-controls="flush-collapse230215"
+            >
+              <div class="class-title">
+                <div class="class-titledescription">
+                  <div class="title-text">IBC 2021 Changes</div>
+                  <div class="title-description">
+                    Gabriela summarizes important changes in the IBC 2021.
+                  </div>
+                </div>
+
+                <div class="title-date">23/02/08</div>
+              </div>
+            </button>
+          </h2>
+          <div
+            id="flush-collapse230215"
+            class="accordion-collapse collapse"
+            aria-labelledby="flush-heading230215"
+          >
+            <div class="accordion-body">
+              <video controls width="720">
+                <source
+                  src="files/2023-orb-u/230215 IBC 2021 Changes/ORB University-20230216_000235-Meeting Recording.mp4"
+                  type="video/mp4"
+                />
+              </video>
+              <div class="class-description">
+                <div class="class-description-info">
+                  <div class="presented-by">Presented by:</div>
+                  <div class="class-author">Gabriela Nessi</div>
+                  <div class="class-resource">Resource files:</div>
+                  <a
+                    href="files/2023-orb-u/230215 IBC 2021 Changes/ORB University_IBC 2021 Code Changes.pptx"
+                    ><ion-icon name="folder" class="files-folder"></ion-icon
+                  ></a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item animals">
+          <h2 class="accordion-header" id="flush-heading230208">
+            <button
+              class="accordion-button collapsed"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#flush-collapse230208"
+              aria-expanded="false"
+              aria-controls="flush-collapse230208"
+            >
+              <div class="class-title">
+                <div class="class-titledescription">
+                  <div class="title-text">Life Safety</div>
+                  <div class="title-description">
+                    Andrés encompasses previous lessons about Life Safety in a
+                    dynamic exercise.
+                  </div>
+                </div>
+
+                <div class="title-date">23/02/08</div>
+              </div>
+            </button>
+          </h2>
+          <div
+            id="flush-collapse230208"
+            class="accordion-collapse collapse"
+            aria-labelledby="flush-heading230208"
+          >
+            <div class="accordion-body">
+              <video controls width="720">
+                <source
+                  src="files/2023-orb-u/230208 Life Safety/Revit University-20230209 001229-Meeting Recording.mp4"
+                  type="video/mp4"
+                />
+              </video>
+              <div class="class-description">
+                <div class="class-description-info">
+                  <div class="presented-by">Presented by:</div>
+                  <div class="class-author">Andrés Fernández</div>
+                  <div class="class-resource">Resource files:</div>
+                  <a
+                    href="files/2023-orb-u/230208 Life Safety/230208-lifesafety.zip"
+                    ><ion-icon name="folder" class="files-folder"></ion-icon
+                  ></a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item animals">
+          <h2 class="accordion-header" id="flush-heading230201">
+            <button
+              class="accordion-button collapsed"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#flush-collapse230201"
+              aria-expanded="false"
+              aria-controls="flush-collapse230201"
+            >
+              <div class="class-title">
+                <div class="class-titledescription">
+                  <div class="title-text">Chapter 10 - Revit</div>
+                  <div class="title-description">
+                    Andrés goes over HIVE families for Life Safety.
+                  </div>
+                </div>
+
+                <div class="title-date">23/02/01</div>
+              </div>
+            </button>
+          </h2>
+          <div
+            id="flush-collapse230201"
+            class="accordion-collapse collapse"
+            aria-labelledby="flush-heading230201"
+          >
+            <div class="accordion-body">
+              <video controls width="720">
+                <source
+                  src="files/2023-orb-u/230201 - Chapter 10 Revit/Revit University-20230201_234108-Meeting Recording.mp4"
+                  type="video/mp4"
+                />
+              </video>
+              <div class="class-description">
+                <div class="class-description-info">
+                  <div class="presented-by">Presented by:</div>
+                  <div class="class-author">Andrés Fernández</div>
+                  <div class="class-resource"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item animals">
+          <h2 class="accordion-header" id="flush-heading230125">
+            <button
+              class="accordion-button collapsed"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#flush-collapse230125"
+              aria-expanded="false"
+              aria-controls="flush-collapse230125"
+            >
+              <div class="class-title">
+                <div class="class-titledescription">
+                  <div class="title-text">
+                    Chapter 10 - Means of Egress Part 2
+                  </div>
+                  <div class="title-description">
+                    Gabriela talks about the different kinds of means of egress
+                    used per the IBC.
+                  </div>
+                </div>
+                <div class="title-date">23/01/25</div>
+              </div>
+            </button>
+          </h2>
+          <div
+            id="flush-collapse230125"
+            class="accordion-collapse collapse"
+            aria-labelledby="flush-heading230125"
+          >
+            <div class="accordion-body">
+              <video controls width="720">
+                <source
+                  src="files/2023-orb-u/230125 Chapter 10/ORB University-20230125_235920-Meeting Recording.mp4"
+                  type="video/mp4"
+                />
+              </video>
+              <div class="class-description">
+                <div class="class-description-info">
+                  <div class="presented-by">Presented by:</div>
+                  <div class="class-author">Gabriela Nessi</div>
+                  <div class="class-resource">
+                    <a
+                      href="files/2023-orb-u/230125 Chapter 10/ORB University_IBC 2018_Means of egress 1006-1011.pptx"
+                    >
+                      Resource files.
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="accordion-item animals">
+          <h2 class="accordion-header" id="flush-heading230118">
+            <button
+              class="accordion-button collapsed"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#flush-collapse230118"
+              aria-expanded="false"
+              aria-controls="flush-collapse230118"
+            >
+              <div class="class-title">
+                <div class="class-titledescription">
+                  <div class="title-text">
+                    Chapter 10 - Means of Egress Part 1
+                  </div>
+                  <div class="title-description">
+                    Gonzalo explains means of egress, and its general criteria
+                    to design them.
+                  </div>
+                </div>
+                <div class="title-date">23/01/18</div>
+              </div>
+            </button>
+          </h2>
+          <div
+            id="flush-collapse230118"
+            class="accordion-collapse collapse"
+            aria-labelledby="flush-heading230118"
+          >
+            <div class="accordion-body">
+              <video controls width="720">
+                <source
+                  src="files/2023-orb-u/230118-chapter-10/ORB_University-20230118_160043-MeetingRecording.mp4"
+                  type="video/mp4"
+                />
+              </video>
+              <div class="class-description">
+                <div class="class-description-info">
+                  <div class="presented-by">Presented by:</div>
+                  <div class="class-author">Gonzalo Fierros</div>
+                  <div class="class-resource">
+                    <a
+                      href="files/2023-orb-u/230118-chapter-10/ORB_University_Chapter_10.pptx"
+                    >
+                      Resource files.
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="accordion-item animals">
+          <h2 class="accordion-header" id="flush-heading230104">
+            <button
+              class="accordion-button collapsed"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#flush-collapse230104"
+              aria-expanded="false"
+              aria-controls="flush-collapse230104"
+            >
+              <div class="class-title">
+                <div class="class-titledescription">
+                  <div class="title-text">
+                    Chapter 9 - Fire Protection and Life Safety Systems
+                  </div>
+                  <div class="title-description">
+                    José talks about different types of fire protections
+                    systems.
+                  </div>
+                </div>
+
+                <div class="title-date">23/01/04</div>
+              </div>
+            </button>
+          </h2>
+          <div
+            id="flush-collapse230104"
+            class="accordion-collapse collapse"
+            aria-labelledby="flush-heading230104"
+          >
+            <div class="accordion-body">
+              <video controls width="720">
+                <source
+                  src="files/2023-orb-u/230104-chapter-8/ORB University-20230104_155700-Meeting Recording.mp4"
+                  type="video/mp4"
+                />
+              </video>
+              <div class="class-description">
+                <div class="class-description-title"></div>
+                <div class="class-description-info">
+                  <div class="presented-by">Presented by:</div>
+                  <div class="class-author">José Salazar</div>
+                  <div class="class-resource">Resource files:</div>
+                  <a
+                    href="files/2023-orb-u/230104-chapter-8/IBC Chapter 9 - ORB University.pdf"
+                    ><ion-icon name="folder" class="files-folder"></ion-icon
+                  ></a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="accordion-item animals">
+          <h2 class="accordion-header" id="flush-heading221207">
+            <button
+              class="accordion-button collapsed"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#flush-collapse221207"
+              aria-expanded="false"
+              aria-controls="flush-collapse221207"
+            >
+              <div class="class-title">
+                <div class="class-titledescription">
+                  <div class="title-text">
+                    Chapter 7 - Fire and Smoke Protection Features
+                  </div>
+                  <div class="title-description">
+                    Nicole talks about fire walls, fire barriers, fire
+                    partitions, and shaft enclosures.
+                  </div>
+                </div>
+                <div class="title-date">22/12/07</div>
+              </div>
+            </button>
+          </h2>
+          <div
+            id="flush-collapse221207"
+            class="accordion-collapse collapse"
+            aria-labelledby="flush-heading221207"
+          >
+            <div class="accordion-body">
+              <div class="multiple-videos">
+                <video controls width="720">
+                  <source
+                    src="files/2022-orb-u/221207 Chapter 7/221207 - Chapter 7.mp4"
+                    type="video/mp4"
+                  />
+                </video>
+                <video controls width="720">
+                  <source
+                    src="files/2022-orb-u/221214 Chapter 7 Revit U/221214 Chapter 7 Revit U.mp4"
+                    type="video/mp4"
+                  />
+                </video>
+              </div>
+              <div class="class-description">
+                <div class="class-description-title">
+                  <p>
+                    Andrés takes on the second half for the Revit portion of
+                    this class.
+                  </p>
+                </div>
+                <div class="class-description-info">
+                  <div class="presented-by">Presented by:</div>
+                  <div class="class-author">
+                    Nicole Kimble & Andrés Fernández
+                  </div>
+                  <div class="class-resource"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="accordion-item animals">
+          <h2 class="accordion-header" id="flush-heading221130">
+            <button
+              class="accordion-button collapsed"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#flush-collapse221130"
+              aria-expanded="false"
+              aria-controls="flush-collapse221130"
+            >
+              <div class="class-title">
+                <div class="class-titledescription">
+                  <div class="title-text">
+                    Chapter 6 - Types of Construction
+                  </div>
+                  <div class="title-description">
+                    Derek tells us about the different types of construction per
+                    the IBC, at the 26:50 mark of the video.
+                  </div>
+                </div>
+                <div class="title-date">22/11/30</div>
+              </div>
+            </button>
+          </h2>
+          <div
+            id="flush-collapse221130"
+            class="accordion-collapse collapse"
+            aria-labelledby="flush-heading221130"
+          >
+            <div class="accordion-body">
+              <!-- put a 26:50 timestamp in this video -->
+              <video controls width="720">
+                <source
+                  src="files/2022-orb-u/221130-Chapter-6-Part-2-&-Revit-U/221130-Chapter-6-Part-2-&-Revit-U.mp4"
+                  type="video/mp4"
+                />
+              </video>
+              <div class="class-description">
+                <div class="class-description-title"></div>
+                <div class="class-description-info">
+                  <div class="presented-by">Presented by:</div>
+                  <div class="class-author">Derek Deschler</div>
+                  <div class="class-resource">
+                    <a
+                      href="files/2022-orb-u/221130-Chapter-6-Part-2-&-Revit-U/ORB University_IBC 2018_Chapter 6.pptx"
+                    >
+                      Resource files.
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item animals">
+          <h2 class="accordion-header" id="flush-heading221117">
+            <button
+              class="accordion-button collapsed"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#flush-collapse221117"
+              aria-expanded="false"
+              aria-controls="flush-collapse221117"
+            >
+              <div class="class-title">
+                <div class="class-titledescription">
+                  <div class="title-text">
+                    Chapter 5 - General Building Height and Areas
+                  </div>
+                  <div class="title-description">
+                    Jhon takes the topics on how to measure our buildings areas
+                    in the right way to determine their height, and where to
+                    split them.
+                  </div>
+                  <div class="title-description">
+                    In the first half of the second video, Andrés explains us
+                    how to measure building areas correctly in Revit.
+                  </div>
+                </div>
+                <div class="title-date">22/11/30</div>
+              </div>
+            </button>
+          </h2>
+          <div
+            id="flush-collapse221117"
+            class="accordion-collapse collapse"
+            aria-labelledby="flush-heading221117"
+          >
+            <div class="accordion-body">
+              <div class="multiple-videos">
+                <video controls width="720">
+                  <source
+                    src="files/2022-orb-u/221117 Chapter 5 and  6 - Part 1/221117 - Chapter 5 and  6 - Part 1.mp4"
+                    type="video/mp4"
+                  />
+                </video>
+                <video controls width="720">
+                  <source
+                    src="files/2022-orb-u/221130-Chapter-6-Part-2-&-Revit-U/221130-Chapter-6-Part-2-&-Revit-U.mp4"
+                    type="video/mp4"
+                  />
+                </video>
+              </div>
+              <div class="class-description">
+                <div class="class-description-title"></div>
+                <div class="class-description-info">
+                  <div class="presented-by">Presented by:</div>
+                  <div class="class-author">
+                    Jhon Heredia & Andrés Fernández
+                  </div>
+                  <div class="class-resource">
+                    <a
+                      href="files/2022-orb-u/221117 Chapter 5 and  6 - Part 1/IBC 2018 - CHAPTER 5.pdf"
+                    >
+                      Resource files.
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item animals">
+          <h2 class="accordion-header" id="flush-heading221110">
+            <button
+              class="accordion-button collapsed"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#flush-collapse221110"
+              aria-expanded="false"
+              aria-controls="flush-collapse221110"
+            >
+              <div class="class-title">
+                <div class="class-titledescription">
+                  <div class="title-text">
+                    Setting Up Wall Sections & Details Components
+                  </div>
+                  <div class="title-description">
+                    Andrés explains us on how to setup wall sections and details
+                    components correctly in our project models.
+                  </div>
+                </div>
+                <div class="title-date">22/11/10</div>
+              </div>
+            </button>
+          </h2>
+          <div
+            id="flush-collapse221110"
+            class="accordion-collapse collapse"
+            aria-labelledby="flush-heading221110"
+          >
+            <div class="accordion-body">
+              <video controls width="720">
+                <source
+                  src="files/2022-orb-u/221110 Setting Up Wall Section & Detail Components/221110 - Setting Up Wall Section & Detail Components.mp4"
+                />
+              </video>
+              <div class="class-description">
+                <div class="class-description-title"></div>
+                <div class="class-description-info">
+                  <div class="presented-by">Presented by:</div>
+                  <div class="class-author">Andrés Fernández</div>
+                  <div class="class-resource"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item animals">
+          <h2 class="accordion-header" id="flush-heading221109">
+            <button
+              class="accordion-button collapsed"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#flush-collapse221109"
+              aria-expanded="false"
+              aria-controls="flush-collapse221109"
+            >
+              <div class="class-title">
+                <div class="class-titledescription">
+                  <div class="title-text">
+                    Linking and Hosting Cloud Based Revit Files
+                  </div>
+                  <div class="title-description">
+                    Derek tells us about the different types of construction per
+                    the IBC.
+                  </div>
+                </div>
+                <div class="title-date">22/11/09</div>
+              </div>
+            </button>
+          </h2>
+          <div
+            id="flush-collapse221109"
+            class="accordion-collapse collapse"
+            aria-labelledby="flush-heading221109"
+          >
+            <div class="accordion-body">
+              <video controls width="720">
+                <source
+                  src="files/2022-orb-u/221109 Linking and Hosting Cloud Based Revit Files/221109 - Linking and Hosting Cloud Based Revit Files.mp4"
+                  type="video/mp4"
+                />
+              </video>
+              <div class="class-description">
+                <div class="class-description-title"></div>
+                <div class="class-description-info">
+                  <div class="presented-by">Presented by:</div>
+                  <div class="class-author">Christian Quintero</div>
+                  <div class="class-resource"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item animals">
+          <h2 class="accordion-header" id="flush-heading221012">
+            <button
+              class="accordion-button collapsed"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#flush-collapse221012"
+              aria-expanded="false"
+              aria-controls="flush-collapse221012"
+            >
+              <div class="class-title">
+                <div class="class-titledescription">
+                  <div class="title-text">Life Safety 2022</div>
+
+                  <div class="title-description">
+                    Andrés refresh us about life safety on Revit components, and
+                    area schemes.
+                  </div>
+                </div>
+                <div class="title-date">22/10/12</div>
+              </div>
+            </button>
+          </h2>
+          <div
+            id="flush-collapse221012"
+            class="accordion-collapse collapse"
+            aria-labelledby="flush-heading221012"
+          >
+            <div class="accordion-body">
+              <video controls width="720">
+                <source
+                  src="files/2022-orb-u/221012 Life Safety 2022/Revit University-20221012_161456-Meeting Recording.mp4"
+                  type="video/mp4"
+                />
+              </video>
+              <div class="class-description">
+                <div class="class-description-title"></div>
+                <div class="class-description-info">
+                  <div class="presented-by">Presented by:</div>
+                  <div class="class-author">Andrés Fernández</div>
+                  <div class="class-resource">
+                    <a
+                      href="files/2022-orb-u/221012 Life Safety 2022/LIFE SAFETY 2022.zip"
+                    >
+                      Resource files.
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item animals">
+          <h2 class="accordion-header" id="flush-heading220914">
+            <button
+              class="accordion-button collapsed"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#flush-collapse220914"
+              aria-expanded="false"
+              aria-controls="flush-collapse220914"
+            >
+              <div class="class-title">
+                <div class="class-title-description">
+                  <div class="title-text">CTC Software & Model Health</div>
+                  <div class="title-description">
+                    Christian overviews CTC Software productivity tool, and in
+                    the second half pertains to Revit modeling best practices
+                    and common mistakes to avoid while setting up Revit
+                    projects.
+                  </div>
+                </div>
+                <div class="title-date">22/08/17</div>
+              </div>
+            </button>
+          </h2>
+          <div
+            id="flush-collapse220914"
+            class="accordion-collapse collapse"
+            aria-labelledby="flush-heading220914"
+          >
+            <div class="accordion-body">
+              <video controls width="720">
+                <source
+                  src="files/2022-orb-u/220817 CTC Software & Model Health/220817 CTC Software & Model Health.mp4"
+                  type="video/mp4"
+                />
+              </video>
+              <div class="class-description">
+                <div class="class-description-title"></div>
+                <div class="class-description-info">
+                  <div class="presented-by">Presented by:</div>
+                  <div class="class-author">Christian Quintero</div>
+                  <div class="class-resource"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item animals">
+          <h2 class="accordion-header" id="flush-heading220803">
+            <button
+              class="accordion-button collapsed"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#flush-collapse220803"
+              aria-expanded="false"
+              aria-controls="flush-collapse220803"
+            >
+              <div class="class-title">
+                <div class="class-titledescription">
+                  <div class="title-text">Kitchen ANSI Code Outlets</div>
+                  <div class="title-description">
+                    Accessibility items concerning kitchen outlets and
+                    clearances needed.
+                  </div>
+                </div>
+                <div class="title-date">22/08/03</div>
+              </div>
+            </button>
+          </h2>
+          <div
+            id="flush-collapse220803"
+            class="accordion-collapse collapse"
+            aria-labelledby="flush-heading220803"
+          >
+            <div class="accordion-body">
+              <video controls width="720">
+                <source
+                  src="files/2022-orb-u/220803 Kitchen Ansi Code outlets/220803 Kitchen Ansi Code outlets.mp4"
+                  type="video/mp4"
+                />
+              </video>
+              <div class="class-description">
+                <div class="class-description-title"></div>
+                <div class="class-description-info">
+                  <div class="presented-by">Presented by:</div>
+                  <div class="class-author">Gonzalo Fierros</div>
+                  <div class="class-resource"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item animals">
+          <h2 class="accordion-header" id="flush-heading220801">
+            <button
+              class="accordion-button collapsed"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#flush-collapse220801"
+              aria-expanded="false"
+              aria-controls="flush-collapse220801"
+            >
+              <div class="class-title">
+                <div class="class-titledescription">
+                  <div class="title-text">Seminar - Build Training</div>
+                  <div class="title-description">
+                    New Build Software walkthrough by US CAD Andrell Laniewicz.
+                  </div>
+                </div>
+                <div class="title-date">22/08/01</div>
+              </div>
+            </button>
+          </h2>
+          <div
+            id="flush-collapse220801"
+            class="accordion-collapse collapse"
+            aria-labelledby="flush-heading220801"
+          >
+            <div class="accordion-body">
+              <video controls width="720">
+                <source
+                  src="files/2022-orb-u/220801 Build Training/220801 Build Training 2.mp4"
+                  type="video/mp4"
+                />
+              </video>
+              <div class="class-description">
+                <div class="class-description-title"></div>
+                <div class="class-description-info">
+                  <div class="presented-by">Presented by:</div>
+                  <div class="class-author">Andrell Laniewicz</div>
+                  <div class="class-resource"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item animals">
+          <h2 class="accordion-header" id="flush-heading220603">
+            <button
+              class="accordion-button collapsed"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#flush-collapse220603"
+              aria-expanded="false"
+              aria-controls="flush-collapse220603"
+            >
+              <div class="class-title">
+                <div class="class-titledescription">
+                  <div class="title-text">Seminar - ANSI Seminar</div>
+                  <div class="title-description">
+                    ANSI Seminar for Type A and Type B units.
+                  </div>
+                </div>
+                <div class="title-date">22/06/15</div>
+              </div>
+            </button>
+          </h2>
+          <div
+            id="flush-collapse220603"
+            class="accordion-collapse collapse"
+            aria-labelledby="flush-heading220603"
+          >
+            <div class="accordion-body">
+              <div class="multiple-videos">
+                <video controls width="720">
+                  <source
+                    src="files/2022-orb-u/220615 Terry Kitay Ansi Seminar/220603 Terry Kitay Ansi Seminar Part 1.mp4"
+                    type="video/mp4"
+                  />
+                </video>
+                <video controls width="720">
+                  <source
+                    src="files/2022-orb-u/220615 Terry Kitay Ansi Seminar/220615 Terry Kitay Ansi Seminar Part 2.mp4"
+                    type="video/mp4"
+                  />
+                </video>
+              </div>
+              <div class="class-description">
+                <div class="class-description-title"></div>
+                <div class="class-description-info">
+                  <div class="presented-by">Presented by:</div>
+                  <div class="class-author">Terry Kitay</div>
+                  <div class="class-resource"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item animals">
+          <h2 class="accordion-header" id="flush-heading220524">
+            <button
+              class="accordion-button collapsed"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#flush-collapse220524"
+              aria-expanded="false"
+              aria-controls="flush-collapse220524"
+            >
+              <div class="class-title">
+                <div class="class-titledescription">
+                  <div class="title-text">Temporary Structures for Units</div>
+                  <div class="title-description">
+                    Temporary structure families for massing and site
+                    development during schematic design.
+                  </div>
+                </div>
+                <div class="title-date">22/05/24</div>
+              </div>
+            </button>
+          </h2>
+          <div
+            id="flush-collapse220524"
+            class="accordion-collapse collapse"
+            aria-labelledby="flush-heading220524"
+          >
+            <div class="accordion-body">
+              <video controls width="720">
+                <source
+                  src="files/2022-orb-u/220614 Temporary Structures Unit Family/220524 Temporary Structures.mp4"
+                  type="video/mp4"
+                />
+              </video>
+              <div class="class-description">
+                <div class="class-description-title"></div>
+                <div class="class-description-info">
+                  <div class="presented-by">Presented by:</div>
+                  <div class="class-author">Andrés Fernández</div>
+                  <div class="class-resource"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="accordion-item animals">
+          <h2 class="accordion-header" id="flush-heading210616">
+            <button
+              class="accordion-button collapsed"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#flush-collapse210616"
+              aria-expanded="false"
+              aria-controls="flush-collapse210616"
+            >
+              <div class="class-title">
+                <div class="class-titledescription">
+                  <div class="title-text">Risky Business</div>
+                  <div class="title-description">
+                    How to minimize risk by utilizing proper project
+                    organization, management and wording in contracts. This
+                    lecture encompasses different "risk driven" inside any type
+                    of business.
+                  </div>
+                </div>
+
+                <div class="title-date">23/07/19</div>
+              </div>
+            </button>
+          </h2>
+          <div
+            id="flush-collapse210616"
+            class="accordion-collapse collapse"
+            aria-labelledby="flush-heading210616"
+          >
+            <div class="accordion-body">
+              <div class="class-description">
+                <div class="class-description-title"></div>
+                <div class="class-description-info">
+                  <div class="presented-by"></div>
+                  <div class="class-author">
+                    <img
+                      class="tom-cruise"
+                      src="https://m.media-amazon.com/images/M/MV5BMTU4ODQ1NjUyMV5BMl5BanBnXkFtZTcwNjYzNjMwNA@@._V1_.jpg"
+                      alt=""
+                      srcset=""
+                    />
+                  </div>
+                  <div class="class-resource">Resource files:</div>
+                  <div>
+                    <div>
+                      <a
+                        href="files/2021-orb-u/210616 - Risky Business/210616 - risky business.zip"
+                        ><ion-icon
+                          name="folder"
+                          class="files-folder"
+                        ></ion-icon>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="accordion-item animals">
+          <h2 class="accordion-header" id="flush-heading220803">
+            <button
+              class="accordion-button collapsed"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#flush-collapse220803"
+              aria-expanded="false"
+              aria-controls="flush-collapse220803"
+            >
+              <div class="class-title">
+                <div class="class-titledescription">
+                  <div class="title-text">Hive Keynoting</div>
+                  <div class="title-description">
+                    A walkthrough on how to organize and modify keynotes using
+                    Hive.
+                  </div>
+                </div>
+                <div class="title-date">22/02/08</div>
+              </div>
+            </button>
+          </h2>
+          <div
+            id="flush-collapse220803"
+            class="accordion-collapse collapse"
+            aria-labelledby="flush-heading220803"
+          >
+            <div class="accordion-body">
+              <video controls width="720">
+                <source
+                  src="files/2022-orb-u/220803 Hive Keynoting/220803 Hive Keynoting.mp4"
+                  type="video/mp4"
+                />
+              </video>
+              <div class="class-description">
+                <div class="class-description-title"></div>
+                <div class="class-description-info">
+                  <div class="presented-by"></div>
+                  <div class="class-author"></div>
+                  <div class="class-resource"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="accordion-item animals">
+          <h2 class="accordion-header" id="flush-heading220208">
+            <button
+              class="accordion-button collapsed"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#flush-collapse220208"
+              aria-expanded="false"
+              aria-controls="flush-collapse220208"
+            >
+              <div class="class-title">
+                <div class="class-titledescription">
+                  <div class="title-text">Creating Key Plans</div>
+                  <div class="title-description">
+                    A walkthrough on how to create key plans in Revit.
+                  </div>
+                </div>
+                <div class="title-date">22/02/08</div>
+              </div>
+            </button>
+          </h2>
+          <div
+            id="flush-collapse220208"
+            class="accordion-collapse collapse"
+            aria-labelledby="flush-heading220208"
+          >
+            <div class="accordion-body">
+              <video controls width="720">
+                <source
+                  src="files/2022-orb-u/220209 Keymaps/220208 Keymaps.mp4"
+                  type="video/mp4"
+                />
+              </video>
+              <div class="class-description">
+                <div class="class-description-title"></div>
+                <div class="class-description-info">
+                  <div class="presented-by"></div>
+                  <div class="class-author"></div>
+                  <div class="class-resource"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="accordion-item animals">
+          <h2 class="accordion-header" id="flush-heading211215">
+            <button
+              class="accordion-button collapsed"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#flush-collapse211215"
+              aria-expanded="false"
+              aria-controls="flush-collapse211215"
+            >
+              <div class="class-title">
+                <div class="class-titledescription">
+                  <div class="title-text">Creating Roof Plans</div>
+                  <div class="title-description">
+                    A walkthrough on how to create roof plans in Revit.
+                  </div>
+                </div>
+                <div class="title-date">21/12/15</div>
+              </div>
+            </button>
+          </h2>
+          <div
+            id="flush-collapse211215"
+            class="accordion-collapse collapse"
+            aria-labelledby="flush-heading211215"
+          >
+            <div class="accordion-body">
+              <video controls width="720">
+                <source
+                  src="files/2021-orb-u/211215 Roof Plan/211215 Roof Plan Revit 102.mp4"
+                  type="video/mp4"
+                />
+              </video>
+              <div class="class-description">
+                <div class="class-description-title"></div>
+                <div class="class-description-info">
+                  <div class="presented-by"></div>
+                  <div class="class-author"></div>
+                  <div class="class-resource"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="accordion-item animals">
+          <h2 class="accordion-header" id="flush-heading211123">
+            <button
+              class="accordion-button collapsed"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#flush-collapse211123"
+              aria-expanded="false"
+              aria-controls="flush-collapse211123"
+            >
+              <div class="class-title">
+                <div class="class-titledescription">
+                  <div class="title-text">Creating Unit Floor Plans</div>
+                  <div class="title-description">
+                    A walkthrough on how to create unit floor plans and place
+                    them in the central model.
+                  </div>
+                </div>
+                <div class="title-date">21/11/23</div>
+              </div>
+            </button>
+          </h2>
+          <div
+            id="flush-collapse211123"
+            class="accordion-collapse collapse"
+            aria-labelledby="flush-heading211123"
+          >
+            <div class="accordion-body">
+              <video controls width="720">
+                <source
+                  src="files/2021-orb-u/211123 Creating Unit Floor  plans and Dynamo/211123 Dynamo Creating unit plans.mp4"
+                  type="video/mp4"
+                />
+              </video>
+              <div class="class-description">
+                <div class="class-description-title"></div>
+                <div class="class-description-info">
+                  <div class="presented-by"></div>
+                  <div class="class-author"></div>
+                  <div class="class-resource">
+                    <p>Download all the files here:</p>
+                    <a
+                      href="files/2021-orb-u/211123 Creating Unit Floor  plans and Dynamo/211123 Creating Unit Floor  plans and Dynamo.zip"
+                      ><ion-icon name="folder" class="files-folder"></ion-icon>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="accordion-item animals">
+          <h2 class="accordion-header" id="flush-heading211019">
+            <button
+              class="accordion-button collapsed"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#flush-collapse211019"
+              aria-expanded="false"
+              aria-controls="flush-collapse211019"
+            >
+              <div class="class-title">
+                <div class="class-titledescription">
+                  <div class="title-text">Creating Stairs & Railings</div>
+                  <div class="title-description">
+                    Explanation on how creating stairs and railings from
+                    scratch.
+                  </div>
+                </div>
+                <div class="title-date">21/10/19</div>
+              </div>
+            </button>
+          </h2>
+          <div
+            id="flush-collapse211019"
+            class="accordion-collapse collapse"
+            aria-labelledby="flush-heading211019"
+          >
+            <div class="accordion-body">
+              <video controls width="720">
+                <source
+                  src="files/2021-orb-u/211019 Creating Stairs & Railings/211019 Stairs.mp4"
+                  type="video/mp4"
+                />
+              </video>
+              <div class="class-description">
+                <div class="class-description-title"></div>
+                <div class="class-description-info">
+                  <div class="presented-by"></div>
+                  <div class="class-author"></div>
+                  <div class="class-resource">
+                    <p>Download all the files here:</p>
+                    <a
+                      href="files/2021-orb-u/211019 Creating Stairs & Railings/211019 Stairs.zip"
+                      ><ion-icon name="folder" class="files-folder"></ion-icon>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="accordion-item animals">
+          <h2 class="accordion-header" id="flush-heading210428">
+            <button
+              class="accordion-button collapsed"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#flush-collapse210428"
+              aria-expanded="false"
+              aria-controls="flush-collapse210428"
+            >
+              <div class="class-title">
+                <div class="class-titledescription">
+                  <div class="title-text">
+                    ANSI Type B Unit Refresh - Part 2
+                  </div>
+                  <div class="title-description">
+                    Part 2 of the previous topic.
+                  </div>
+                </div>
+                <div class="title-date">21/04/28</div>
+              </div>
+            </button>
+          </h2>
+          <div
+            id="flush-collapse210428"
+            class="accordion-collapse collapse"
+            aria-labelledby="flush-heading210428"
+          >
+            <div class="accordion-body">
+              <video controls width="720">
+                <source
+                  src="files/2021-orb-u/210428 - ANSI Part 2/210428 ORB University Unit Ansi part 2.mp4"
+                  type="video/mp4"
+                />
+              </video>
+              <div class="class-description">
+                <div class="class-description-title">
+                  <p>Download all the files here:</p>
+                  <a
+                    href="files/2021-orb-u/210428 - ANSI Part 2/210428-ansi-part2.zip"
+                    ><ion-icon name="folder" class="files-folder"></ion-icon>
+                  </a>
+                </div>
+                <div class="class-description-info">
+                  <div class="presented-by"></div>
+                  <div class="class-author"></div>
+                  <div class="class-resource"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item animals">
+          <h2 class="accordion-header" id="flush-heading210414">
+            <button
+              class="accordion-button collapsed"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#flush-collapse210414"
+              aria-expanded="false"
+              aria-controls="flush-collapse210414"
+            >
+              <div class="class-title">
+                <div class="class-titledescription">
+                  <div class="title-text">
+                    ANSI Type B Unit Refresh - Part 1
+                  </div>
+                  <div class="title-description">
+                    Refresh on unit design and things applicable ANSI
+                    clearances.
+                  </div>
+                </div>
+                <div class="title-date">21/04/14</div>
+              </div>
+            </button>
+          </h2>
+          <div
+            id="flush-collapse210414"
+            class="accordion-collapse collapse"
+            aria-labelledby="flush-heading210414"
+          >
+            <div class="accordion-body">
+              <video controls width="720">
+                <source
+                  src="files/2021-orb-u/210414 - ANSI Type B Unit Refresh/210415 Ansi Class Part 1 small.mp4"
+                  type="video/mp4"
+                />
+              </video>
+              <div class="class-description">
+                <div class="class-description-title">
+                  <p>Download all the files here:</p>
+                  <a
+                    href="files/2021-orb-u/210414 - ANSI Type B Unit Refresh/210414-ansi-part1.zip"
+                    ><ion-icon name="folder" class="files-folder"></ion-icon>
+                  </a>
+                </div>
+                <div class="class-description-info">
+                  <div class="presented-by"></div>
+                  <div class="class-author"></div>
+                  <div class="class-resource"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item animals">
+          <h2 class="accordion-header" id="flush-heading210406">
+            <button
+              class="accordion-button collapsed"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#flush-collapse210406"
+              aria-expanded="false"
+              aria-controls="flush-collapse210406"
+            >
+              <div class="class-title">
+                <div class="class-titledescription">
+                  <div class="title-text">Building Setbacks</div>
+                  <div class="title-description">
+                    Video in methodology to develop sites utilizing a condensed
+                    formula, frontage increases explained.
+                  </div>
+                </div>
+                <div class="title-date">21/04/06</div>
+              </div>
+            </button>
+          </h2>
+          <div
+            id="flush-collapse210406"
+            class="accordion-collapse collapse"
+            aria-labelledby="flush-heading210406"
+          >
+            <div class="accordion-body">
+              <video controls width="720">
+                <source
+                  src="files/2021-orb-u/210406 - Set Backs/210317 ORB University.mp4"
+                  type="video/mp4"
+                />
+              </video>
+              <div class="class-description">
+                <div class="class-description-title"></div>
+                <div class="class-description-info">
+                  <div class="presented-by">Presented by:</div>
+                  <div class="class-author">Terry Kleber</div>
+                  <div class="class-resource"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="accordion-item animals">
+          <h2 class="accordion-header" id="flush-heading210203">
+            <button
+              class="accordion-button collapsed"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#flush-collapse210203"
+              aria-expanded="false"
+              aria-controls="flush-collapse210203"
+            >
+              <div class="class-title">
+                <div class="class-titledescription">
+                  <div class="title-text">Unit Door & Hardware</div>
+                  <div class="title-description">
+                    Explanation on char factor and different styles of wood
+                    construction.
+                  </div>
+                </div>
+                <div class="title-date">21/02/03</div>
+              </div>
+            </button>
+          </h2>
+          <div
+            id="flush-collapse210203"
+            class="accordion-collapse collapse"
+            aria-labelledby="flush-heading210203"
+          >
+            <div class="accordion-body">
+              <video controls width="720">
+                <source
+                  src="files/2021-orb-u/210203 - Unit Doors and Hardware/210203 Door Hardware.mp4"
+                  type="video/mp4"
+                />
+              </video>
+              <div class="class-description">
+                <div class="class-description-title"></div>
+                <div class="class-description-info">
+                  <div class="presented-by">Presented by:</div>
+                  <div class="class-author">Terry Kleber</div>
+                  <div class="class-resource">
+                    <p>Download all the files here:</p>
+                    <a
+                      href="files/2021-orb-u/210203 - Unit Doors and Hardware/210203-unit-hardware.zip"
+                      ><ion-icon name="folder" class="files-folder"></ion-icon>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="accordion-item animals">
+          <h2 class="accordion-header" id="flush-heading201216">
+            <button
+              class="accordion-button collapsed"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#flush-collapse201216"
+              aria-expanded="false"
+              aria-controls="flush-collapse201216"
+            >
+              <div class="class-title">
+                <div class="class-titledescription">
+                  <div class="title-text">Tyvek Recessed Window Flashing</div>
+                  <div class="title-description">
+                    A video with a detailed walkthrough on how to install a
+                    Tyvek recessed window.
+                  </div>
+                </div>
+                <div class="title-date">20/12/16</div>
+              </div>
+            </button>
+          </h2>
+          <div
+            id="flush-collapse201216"
+            class="accordion-collapse collapse"
+            aria-labelledby="flush-heading201216"
+          >
+            <div class="accordion-body">
+              <!-- convert video -->
+              <video controls width="720">
+                <source
+                  src="files/2020-orb-u/201216 - Tyvek Recessed Window Flashing/Bs Portland Tyvek Recessed Window Flashing.mp4"
+                  type="video/mp4"
+                />
+              </video>
+              <div class="class-description">
+                <div class="class-description-title"></div>
+                <div class="class-description-info">
+                  <div class="presented-by">Presented by:</div>
+                  <div class="class-author">Eric Rist</div>
+                  <div class="class-resource"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item animals">
+          <h2 class="accordion-header" id="flush-heading201118">
+            <button
+              class="accordion-button collapsed"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#flush-collapse201118"
+              aria-expanded="false"
+              aria-controls="flush-collapse201118"
+            >
+              <div class="class-title">
+                <div class="class-titledescription">
+                  <div class="title-text">Hilti Firestopping</div>
+                  <div class="title-description">
+                    Documents on how to read Hilti product's model number
+                    nomenclature.
+                  </div>
+                </div>
+                <div class="title-date">20/11/18</div>
+              </div>
+            </button>
+          </h2>
+          <div
+            id="flush-collapse201118"
+            class="accordion-collapse collapse"
+            aria-labelledby="flush-heading201118"
+          >
+            <div class="accordion-body">
+              <video controls width="720">
+                <source
+                  src="files/2020-orb-u/201118 - Hilti - Firestopping/Fire penetrations.mp4"
+                  type="video/mp4"
+                />
+              </video>
+              <div class="class-description">
+                <div class="class-description-title"></div>
+                <div class="class-description-info">
+                  <div class="presented-by">Presented by:</div>
+                  <div class="class-author">Eric Rist</div>
+                  <div class="class-resource">
+                    <p>Download all the files here:</p>
+                    <a
+                      href="files/2020-orb-u/201118 - Hilti - Firestopping/201118-hilti-firestopping.zip"
+                      ><ion-icon name="folder" class="files-folder"></ion-icon>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item animals">
+          <h2 class="accordion-header" id="flush-heading200930">
+            <button
+              class="accordion-button collapsed"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#flush-collapse200930"
+              aria-expanded="false"
+              aria-controls="flush-collapse200930"
+            >
+              <div class="class-title">
+                <div class="class-titledescription">
+                  <div class="title-text">Podiums</div>
+                  <div class="title-description">
+                    Walkthrough of typical details for the courtyard podium
+                    area, and where they apply based on design basis.
+                  </div>
+                </div>
+                <div class="title-date">20/09/30</div>
+              </div>
+            </button>
+          </h2>
+          <div
+            id="flush-collapse200930"
+            class="accordion-collapse collapse"
+            aria-labelledby="flush-heading200930"
+          >
+            <div class="accordion-body">
+              <video controls width="720">
+                <source
+                  src="files/2020-orb-u/200930 - Podiums/200930 Podium Slabs.mp4"
+                  type="video/mp4"
+                />
+              </video>
+              <div class="class-description">
+                <div class="class-description-title"></div>
+                <div class="class-description-info">
+                  <div class="presented-by">Presented by:</div>
+                  <div class="class-author">Terry Kleber</div>
+                  <div class="class-resource">
+                    <p>Download all the files here:</p>
+                    <a
+                      href="files/2020-orb-u/200930 - Podiums/200930-podiums.zip"
+                      ><ion-icon name="folder" class="files-folder"></ion-icon>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="accordion-item animals">
+          <h2 class="accordion-header" id="flush-heading200909">
+            <button
+              class="accordion-button collapsed"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#flush-collapse200909"
+              aria-expanded="false"
+              aria-controls="flush-collapse200909"
+            >
+              <div class="class-title">
+                <div class="class-titledescription">
+                  <div class="title-text">
+                    Concealed Spaces & Floor Ceiling Assemblies
+                  </div>
+                  <div class="title-description">
+                    Breakdown on typical ORB floor/ceiling assemblies, and how
+                    they're built on the field to comply with concealed void
+                    space requierements per IBC/NFPA.
+                  </div>
+                </div>
+                <div class="title-date">20/09/09</div>
+              </div>
+            </button>
+          </h2>
+          <div
+            id="flush-collapse200909"
+            class="accordion-collapse collapse"
+            aria-labelledby="flush-heading200909"
+          >
+            <div class="accordion-body">
+              <video controls width="720">
+                <source
+                  src="files/2020-orb-u/200909 - Concealed Spaces & Floor Ceiling Assemblies/200909 NFPA sprinkler systems.mp4"
+                  type="video/mp4"
+                />
+              </video>
+              <div class="class-description">
+                <div class="class-description-title"></div>
+                <div class="class-description-info">
+                  <div class="class-resource">
+                    <p>Download all the files here:</p>
+                    <a
+                      href="files/2020-orb-u/200909 - Concealed Spaces & Floor Ceiling Assemblies/200909-concealed spaces.zip"
+                      ><ion-icon name="folder" class="files-folder"></ion-icon>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="accordion-item animals">
+          <h2 class="accordion-header" id="flush-heading200819">
+            <button
+              class="accordion-button collapsed"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#flush-collapse200819"
+              aria-expanded="false"
+              aria-controls="flush-collapse200819"
+            >
+              <div class="class-title">
+                <div class="class-titledescription">
+                  <div class="title-text">Concealed Spaces & Sprinklers</div>
+                  <div class="title-description">
+                    NFPA-13 explanation on how to protect void space of 6" or
+                    more, including ceilings/floor spaces to be protected.
+                  </div>
+                </div>
+                <div class="title-date">20/08/19</div>
+              </div>
+            </button>
+          </h2>
+          <div
+            id="flush-collapse200819"
+            class="accordion-collapse collapse"
+            aria-labelledby="flush-heading200819"
+          >
+            <div class="accordion-body">
+              <video controls width="720">
+                <source
+                  src="files/2020-orb-u/200819 - Concealed Spaces and Sprinklers/200819 Concealed Spaces.mp4"
+                  type="video/mp4"
+                />
+              </video>
+              <div class="class-description">
+                <div class="class-description-title"></div>
+                <div class="class-description-info">
+                  <div class="class-resource">
+                    <p>Download all the files here:</p>
+                    <a
+                      href="files/2020-orb-u/200819 - Concealed Spaces and Sprinklers/200819-concealed spaces and sprinklers.zip"
+                      ><ion-icon name="folder" class="files-folder"></ion-icon>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item animals">
+          <h2 class="accordion-header" id="flush-heading200812">
+            <button
+              class="accordion-button collapsed"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#flush-collapse200812"
+              aria-expanded="false"
+              aria-controls="flush-collapse200812"
+            >
+              <div class="class-title">
+                <div class="class-titledescription">
+                  <div class="title-text">
+                    Fire Extinguisher Cabinets, Standpipes, & Fire Hose
+                    Connections
+                  </div>
+                  <div class="title-description">
+                    Explains required distances and exceptions for Chapter 9
+                    protection items.
+                  </div>
+                </div>
+                <div class="title-date">20/08/12</div>
+              </div>
+            </button>
+          </h2>
+          <div
+            id="flush-collapse200812"
+            class="accordion-collapse collapse"
+            aria-labelledby="flush-heading200812"
+          >
+            <div class="accordion-body">
+              <video controls width="720">
+                <source
+                  src="files/2020-orb-u/200812 - Fire Extingisher Cabinets, Standpipes, & Fire Hose Connections/200812 Life Safety Fire Extinguisher & Stand Pipe.mp4"
+                  type="video/mp4"
+                />
+              </video>
+              <div class="class-description">
+                <div class="class-description-title"></div>
+                <div class="class-description-info">
+                  <div class="class-resource">
+                    <p>Download all the files here:</p>
+                    <a
+                      href="files/2020-orb-u/200812 - Fire Extingisher Cabinets, Standpipes, & Fire Hose Connections/200812-fire extinguishers.zip"
+                      ><ion-icon name="folder" class="files-folder"></ion-icon>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item animals">
+          <h2 class="accordion-header" id="flush-heading200729">
+            <button
+              class="accordion-button collapsed"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#flush-collapse200729"
+              aria-expanded="false"
+              aria-controls="flush-collapse200729"
+            >
+              <div class="class-title">
+                <div class="class-titledescription">
+                  <div class="title-text">Elevator & Hoistway Protection</div>
+                  <div class="title-description">
+                    Dissection on protection needed for hoistways and elevator
+                    lobbies. Smoker barriers explained.
+                  </div>
+                </div>
+                <div class="title-date">20/07/29</div>
+              </div>
+            </button>
+          </h2>
+          <div
+            id="flush-collapse200729"
+            class="accordion-collapse collapse"
+            aria-labelledby="flush-heading200729"
+          >
+            <div class="accordion-body">
+              <video controls width="720">
+                <source
+                  src="files/2020-orb-u/200729 - Elevator & Hoistway Protection/200729 Elevator Lobbies fire and smoke protection.mp4"
+                  type="video/mp4"
+                />
+              </video>
+              <div class="class-description">
+                <div class="class-description-title"></div>
+                <div class="class-description-info">
+                  <div class="class-resource">
+                    <p>Download all the files here:</p>
+                    <a
+                      href="files/2020-orb-u/200729 - Elevator & Hoistway Protection/200729-elevator.zip"
+                      ><ion-icon name="folder" class="files-folder"></ion-icon>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="accordion-item animals">
+          <h2 class="accordion-header" id="flush-heading200527">
+            <button
+              class="accordion-button collapsed"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#flush-collapse200527"
+              aria-expanded="false"
+              aria-controls="flush-collapse200527"
+            >
+              <div class="class-title">
+                <div class="class-titledescription">
+                  <div class="title-text">
+                    Fire Walls/Barriers/Partition Exercise
+                  </div>
+                  <div class="title-description">
+                    Presentation of fire protection types.
+                  </div>
+                </div>
+                <div class="title-date">20/05/27</div>
+              </div>
+            </button>
+          </h2>
+          <div
+            id="flush-collapse200527"
+            class="accordion-collapse collapse"
+            aria-labelledby="flush-heading200527"
+          >
+            <div class="accordion-body">
+              <video controls width="720">
+                <source
+                  src="files/2020-orb-u/200527 - Fire Walls,Barriers,Partition Excercise/200527 Fire Walls,Barriers,Partition Excercise.mp4"
+                />
+              </video>
+              <div class="class-description">
+                <div class="class-description-title"></div>
+                <div class="class-description-info">
+                  <div class="presented-by">Presented by:</div>
+                  <div class="class-author">Terry Kleber</div>
+                  <div class="class-resource"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="accordion-item animals">
+          <h2 class="accordion-header" id="flush-heading200429">
+            <button
+              class="accordion-button collapsed"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#flush-collapse200429"
+              aria-expanded="false"
+              aria-controls="flush-collapse200429"
+            >
+              <div class="class-title">
+                <div class="class-titledescription">
+                  <div class="title-text">
+                    Life Safety - Occupancy Load Analysis in Courtyard
+                  </div>
+                  <div class="title-description">
+                    Building areas analysis - Chapter 10
+                  </div>
+                </div>
+                <div class="title-date">20/04/29</div>
+              </div>
+            </button>
+          </h2>
+          <div
+            id="flush-collapse200429"
+            class="accordion-collapse collapse"
+            aria-labelledby="flush-heading200429"
+          >
+            <div class="accordion-body">
+              <video controls width="720">
+                <source
+                  src="files/2020-orb-u/200429 - Life Safety - Occupant Load - Courtyard/200429 Life Safety Class 03 Occupant Load Courtyard.mp4"
+                  type="video/mp4"
+                />
+              </video>
+              <div class="class-description">
+                <div class="class-description-title"></div>
+                <div class="class-description-info">
+                  <div class="class-resource">
+                    <p>Download all the files here:</p>
+                    <a
+                      href="files/2020-orb-u/200429 - Life Safety - Occupant Load - Courtyard/200429-life safety occupant.zip"
+                      ><ion-icon name="folder" class="files-folder"></ion-icon>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item animals">
+          <h2 class="accordion-header" id="flush-heading200422">
+            <button
+              class="accordion-button collapsed"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#flush-collapse200422"
+              aria-expanded="false"
+              aria-controls="flush-collapse200422"
+            >
+              <div class="class-title">
+                <div class="class-titledescription">
+                  <div class="title-text">
+                    Life Safety - Occupant Load Analysis
+                  </div>
+                  <div class="title-description">
+                    Building areas analysis - Chapter 10
+                  </div>
+                </div>
+                <div class="title-date">20/04/22</div>
+              </div>
+            </button>
+          </h2>
+          <div
+            id="flush-collapse200422"
+            class="accordion-collapse collapse"
+            aria-labelledby="flush-heading200422"
+          >
+            <div class="accordion-body">
+              <video controls width="720">
+                <source
+                  src="files/2020-orb-u/200422 - Life Safety/200422 Life Safety Class 02 Occupant Load.mp4"
+                  type="video/mp4"
+                />
+              </video>
+              <div class="class-description">
+                <div class="class-description-title"></div>
+                <div class="class-description-info">
+                  <div class="class-resource">
+                    <p>Download all the files here:</p>
+                    <a
+                      href="files/2020-orb-u/200422 - Life Safety/200422-life satey occupant load.zip"
+                      ><ion-icon name="folder" class="files-folder"></ion-icon>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="accordion-item animals">
+          <h2 class="accordion-header" id="flush-heading190305">
+            <button
+              class="accordion-button collapsed"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#flush-collapse190305"
+              aria-expanded="false"
+              aria-controls="flush-collapse190305"
+            >
+              <div class="class-title">
+                <div class="class-titledescription">
+                  <div class="title-text">IBC Stucco Review</div>
+                  <div class="title-description">
+                    Compliance with IBC finishes, and typical details review.
+                  </div>
+                </div>
+                <div class="title-date">19/03/05</div>
+              </div>
+            </button>
+          </h2>
+          <div
+            id="flush-collapse190305"
+            class="accordion-collapse collapse"
+            aria-labelledby="flush-heading190305"
+          >
+            <div class="accordion-body">
+              <video controls width="720">
+                <source
+                  src="files/2019-orb-u/190305 - IBC Stucco Review/BSMT Mockup Wall - Stucco Lath Mod.mp4"
+                  type="video/mp4"
+                />
+              </video>
+              <div class="class-description">
+                <div class="class-description-title"></div>
+                <div class="class-description-info">
+                  <div class="class-resource">
+                    <p>Download all the files here:</p>
+                    <a
+                      href="files/2019-orb-u/190305 - IBC Stucco Review/190305-ibc stucco.zip"
+                      ><ion-icon name="folder" class="files-folder"></ion-icon>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item animals">
+          <h2 class="accordion-header" id="flush-heading190220">
+            <button
+              class="accordion-button collapsed"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#flush-collapse190220"
+              aria-expanded="false"
+              aria-controls="flush-collapse190220"
+            >
+              <div class="class-title">
+                <div class="class-titledescription">
+                  <div class="title-text">Podium Waterproofing</div>
+                  <div class="title-description">
+                    Podium waterproofing and SK review.
+                  </div>
+                </div>
+                <div class="title-date">19/02/20</div>
+              </div>
+            </button>
+          </h2>
+          <div
+            id="flush-collapse190220"
+            class="accordion-collapse collapse"
+            aria-labelledby="flush-heading190220"
+          >
+            <div class="accordion-body">
+              <video controls width="720">
+                <source
+                  src="files/2019-orb-u/190220 - Stucco WRB Podium WP/Format Transformed BSMT Mockup Wall - Podium Waterproofing & Stucco Water-Resistive Barrier.mp4"
+                  type="video/mp4"
+                />
+              </video>
+              <div class="class-description">
+                <div class="class-description-title"></div>
+                <div class="class-description-info">
+                  <div class="class-resource">
+                    <p>Download all the files here:</p>
+                    <a
+                      href="files/2019-orb-u/190220 - Stucco WRB Podium WP/190220-stuccowrb.zip"
+                      ><ion-icon name="folder" class="files-folder"></ion-icon>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item animals">
+          <h2 class="accordion-header" id="flush-heading190206">
+            <button
+              class="accordion-button collapsed"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#flush-collapse190206"
+              aria-expanded="false"
+              aria-controls="flush-collapse190206"
+            >
+              <div class="class-title">
+                <div class="class-titledescription">
+                  <div class="title-text">Window Flashing Fortifiber</div>
+                  <div class="title-description">
+                    Fortifiber flashing mockup wall.
+                  </div>
+                </div>
+                <div class="title-date">19/02/06</div>
+              </div>
+            </button>
+          </h2>
+          <div
+            id="flush-collapse190206"
+            class="accordion-collapse collapse"
+            aria-labelledby="flush-heading190206"
+          >
+            <div class="accordion-body">
+              <video controls width="720">
+                <source
+                  src="files/2019-orb-u/190206 - Window Flashing - Fortifiber/BSMT Mockup Wall - Window Flashing edited.mp4"
+                  type="video/mp4"
+                />
+              </video>
+              <div class="class-description">
+                <div class="class-description-title"></div>
+                <div class="class-description-info">
+                  <div class="class-resource">
+                    <p>Download all the files here:</p>
+                    <a
+                      href="files/2019-orb-u/190206 - Window Flashing - Fortifiber/190206-windowflashing.zip"
+                      ><ion-icon name="folder" class="files-folder"></ion-icon>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- accordion items end here -->
+      </div>
+    </div>
+
+    <footer class="text-center text-lg-start">
+      <div class="text-center p-3">
+        Made with <a href="https://matias.ma/nsfw/">♥</a> by
+        <a class="text-dark" href="https://orbarch.com/">ORB Architecture</a>.
+        Copyright © 2023.
+      </div>
+    </footer>
+
+    <script src="scripts.js"></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"
+    ></script>
+  </body>
+</html>
