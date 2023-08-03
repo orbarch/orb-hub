@@ -101,6 +101,23 @@ a {
   font-size: 12px;
 }
 
+.newsletter h4 {
+  padding-top: 36px;
+  margin: 0;
+  padding-bottom: 4px;
+}
+
+.break-line {
+  border: #8c9e6e;
+}
+
+.newsletter p {
+  font-size: 12px;
+  padding: 2px 0;
+  color: #8c9e6e;
+  margin: 0;
+}
+
 footer {
   display: flex;
   justify-content: center;
