@@ -1,5 +1,5 @@
 // Retrieve the flag indicating whether the password has been entered before
-const hasEnteredPassword = localStorage.getItem("hasEnteredPassword");
+const hasEnteredPassword = sessionStorage.getItem("hasEnteredPassword");
 
 if (hasEnteredPassword) {
   showContent();
@@ -13,7 +13,7 @@ if (hasEnteredPassword) {
       const enteredPassword = document.getElementById("password").value;
 
       if (enteredPassword === correctPassword) {
-        localStorage.setItem("hasEnteredPassword", true);
+        sessionStorage.setItem("hasEnteredPassword", true);
         showContent();
       } else {
         alert("Incorrect password. Please try again.");
