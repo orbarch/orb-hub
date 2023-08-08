@@ -21,6 +21,7 @@ if (hasEnteredPassword) {
     });
 }
 
+//hide password input and show content function
 function showContent() {
   document.getElementById("passwordForm").style.display = "none";
   document.getElementById("content").style.display = "block";
