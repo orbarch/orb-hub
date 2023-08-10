@@ -47,6 +47,42 @@ a {
   padding-right: 12px;
 }
 
+/* breadcrumbs */
+.vertical {
+  font-size: 14px;
+  font-weight: 300;
+  /* letter-spacing: 0.025rem; */
+  position: fixed;
+  bottom: 2rem;
+  left: 1rem;
+  transform: rotate(-90deg);
+  transform-origin: 0 0;
+  color: #212529;
+}
+.vertical a {
+  color: inherit;
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  display: inline-block;
+  transition-property: color;
+  transition-duration: 0.25s;
+  transition-timing-function: ease;
+}
+.vertical a:hover {
+  color: #8c9e6e;
+}
+.vertical a:hover:after {
+  color: #212529;
+}
+.vertical a:after {
+  content: "/";
+  padding: 0 0.5rem;
+  display: inline-block;
+}
+.vertical span.current {
+  color: #8c9e6e;
+}
+
 .content-container {
   display: flex;
   flex-direction: column;
