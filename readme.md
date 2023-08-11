@@ -4,6 +4,7 @@ Private website for ORB Architecture internal use containing resource content fo
 
 ## Roadmap
 
-- Style password input.
-- Feed it more content.
+- Header home button click.
+- Fix ORB University file links.
+- New hire documents.
 - Multiple passwords (?).
