@@ -17,25 +17,45 @@
     </nav>
     <!-- breadcrumbs -->
     <div class="container" id="content">
-      <div class="manuals-title">
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          fill="none"
-          viewBox="0 0 24 24"
-          stroke-width="1.5"
-          stroke="currentColor"
-          class="w-6 h-6"
-        >
-          <path
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            d="M21 7.5l-2.25-1.313M21 7.5v2.25m0-2.25l-2.25 1.313M3 7.5l2.25-1.313M3 7.5l2.25 1.313M3 7.5v2.25m9 3l2.25-1.313M12 12.75l-2.25-1.313M12 12.75V15m0 6.75l2.25-1.313M12 21.75V19.5m0 2.25l-2.25-1.313m0-16.875L12 2.25l2.25 1.313M21 14.25v2.25l-2.25 1.313m-13.5 0L3 16.5v-2.25"
+      <div class="title-container">
+        <div class="manuals-title">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke-width="1.5"
+            stroke="currentColor"
+            class="w-6 h-6"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M21 7.5l-2.25-1.313M21 7.5v2.25m0-2.25l-2.25 1.313M3 7.5l2.25-1.313M3 7.5l2.25 1.313M3 7.5v2.25m9 3l2.25-1.313M12 12.75l-2.25-1.313M12 12.75V15m0 6.75l2.25-1.313M12 21.75V19.5m0 2.25l-2.25-1.313m0-16.875L12 2.25l2.25 1.313M21 14.25v2.25l-2.25 1.313m-13.5 0L3 16.5v-2.25"
+            />
+          </svg>
+          <h1>Revit Manuals</h1>
+        </div>
+        <!-- search bar -->
+        <div class="searchbar">
+          <input
+            id="searchbar"
+            onkeyup="search_class()"
+            type="text"
+            name="search"
+            placeholder="Type to search..."
           />
-        </svg>
-        <h1>Revit Manuals</h1>
-      </div>
 
-      <div class="card-section">
+          <button
+            class="clear-button"
+            id="clear-button"
+            onclick="clearSearch()"
+          >
+            <ion-icon name="close"></ion-icon>
+          </button>
+        </div>
+        <!-- search bar -->
+      </div>
+      <div class="card-section animals">
         <h3>
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -55,14 +75,17 @@
           Model Health Checklist
         </h3>
         <div class="card-container">
-          <a href="manuals-revit-files/ORB Model Health Checklist.xlsx">
+          <a
+            href="manuals-revit-files/ORB Model Health Checklist.xlsx"
+            class="animals"
+          >
             <div class="card">
               <div class="card-description">Model Health Checklist</div>
             </div>
           </a>
         </div>
       </div>
-      <div class="card-section">
+      <div class="card-section animals">
         <h3>
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -81,13 +104,14 @@
           Project Setup
         </h3>
         <div class="card-container">
-          <a href="manuals-revit-files/ORB Revit Manual.pdf">
+          <a href="manuals-revit-files/ORB Revit Manual.pdf" class="animals">
             <div class="card">
               <div class="card-description">ORB Revit Manual</div>
             </div>
           </a>
           <a
             href="manuals-revit-files/Temporary Structures & Site Planning.pdf"
+            class="animals"
           >
             <div class="card">
               <div class="card-description">
@@ -95,13 +119,17 @@
               </div>
             </div>
           </a>
-          <a href="manuals-revit-files/Revit Model Project Startup.pdf">
+          <a
+            href="manuals-revit-files/Revit Model Project Startup.pdf"
+            class="animals"
+          >
             <div class="card">
               <div class="card-description">Revit Model Project Startup</div>
             </div>
           </a>
           <a
             href="manuals-revit-files/Revit Single Building Style Project Set-up.pdf"
+            class="animals"
           >
             <div class="card">
               <div class="card-description">
@@ -109,7 +137,10 @@
               </div>
             </div>
           </a>
-          <a href="manuals-revit-files/Revit Garden Style Project Set-up.pdf">
+          <a
+            href="manuals-revit-files/Revit Garden Style Project Set-up.pdf"
+            class="animals"
+          >
             <div class="card">
               <div class="card-description">
                 Revit Garden Style Project Setup
@@ -118,14 +149,17 @@
           </a>
         </div>
         <div class="card-container">
-          <a href="manuals-revit-files/Linked Unit - Enlarged Plans Set-up.pdf">
+          <a
+            href="manuals-revit-files/Linked Unit - Enlarged Plans Set-up.pdf"
+            class="animals"
+          >
             <div class="card">
               <div class="card-description">Enlarged Plans Setup</div>
             </div>
           </a>
         </div>
       </div>
-      <div class="card-section">
+      <div class="card-section animals">
         <h3>
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -145,34 +179,40 @@
           Coordination
         </h3>
         <div class="card-container">
-          <a href="manuals-revit-files/Copy Monitor.pdf">
+          <a href="manuals-revit-files/Copy Monitor.pdf" class="animals">
             <div class="card">
               <div class="card-description">Copy Monitor</div>
             </div>
           </a>
-          <a href="manuals-revit-files/ORB Dynamo Player.pdf">
+          <a href="manuals-revit-files/ORB Dynamo Player.pdf" class="animals">
             <div class="card">
               <div class="card-description">ORB Dynamo Player</div>
             </div>
           </a>
-          <a href="manuals-revit-files/Revit Material Library.pdf">
+          <a
+            href="manuals-revit-files/Revit Material Library.pdf"
+            class="animals"
+          >
             <div class="card">
               <div class="card-description">Revit Material Library</div>
             </div>
           </a>
-          <a href="manuals-revit-files/Revit Keynote Files.pdf">
+          <a href="manuals-revit-files/Revit Keynote Files.pdf" class="animals">
             <div class="card">
               <div class="card-description">Revit Keynote Files</div>
             </div>
           </a>
-          <a href="manuals-revit-files/Sheets - Unit Sheet Matrix.pdf">
+          <a
+            href="manuals-revit-files/Sheets - Unit Sheet Matrix.pdf"
+            class="animals"
+          >
             <div class="card">
               <div class="card-description">Unit Sheet Matrix</div>
             </div>
           </a>
         </div>
       </div>
-      <div class="card-section">
+      <div class="card-section animals">
         <h3>
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -193,29 +233,39 @@
         <div class="card-container">
           <a
             href="manuals-revit-files/Unit Links - Tags and Schedules Basics.pdf"
+            class="animals"
           >
             <div class="card">
               <div class="card-description">Tags and Schedules Basics</div>
             </div>
           </a>
-          <a href="manuals-revit-files/Enlarged Units - Unit Areas.pdf">
+          <a
+            href="manuals-revit-files/Enlarged Units - Unit Areas.pdf"
+            class="animals"
+          >
             <div class="card">
               <div class="card-description">Unit Areas</div>
             </div>
           </a>
-          <a href="manuals-revit-files/Unit Plans - How to Dimension.pdf">
+          <a
+            href="manuals-revit-files/Unit Plans - How to Dimension.pdf"
+            class="animals"
+          >
             <div class="card">
               <div class="card-description">How to Dimension</div>
             </div>
           </a>
-          <a href="manuals-revit-files/Unit Links - Standard Worksets.pdf">
+          <a
+            href="manuals-revit-files/Unit Links - Standard Worksets.pdf"
+            class="animals"
+          >
             <div class="card">
               <div class="card-description">Standard Worksets</div>
             </div>
           </a>
         </div>
       </div>
-      <div class="card-section">
+      <div class="card-section animals">
         <h3>
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -234,13 +284,14 @@
           System Families
         </h3>
         <div class="card-container">
-          <a href="manuals-revit-files/ORB HIVE.pdf">
+          <a href="manuals-revit-files/ORB HIVE.pdf" class="animals">
             <div class="card">
               <div class="card-description">HIVE</div>
             </div>
           </a>
           <a
             href="manuals-revit-files/System Families - Scope Boxes, Levels and Grid Lines.pdf"
+            class="animals"
           >
             <div class="card">
               <div class="card-description">
@@ -248,18 +299,25 @@
               </div>
             </div>
           </a>
-          <a href="manuals-revit-files/System Families - Line Styles.pdf">
+          <a
+            href="manuals-revit-files/System Families - Line Styles.pdf"
+            class="animals"
+          >
             <div class="card">
               <div class="card-description">Line Styles</div>
             </div>
           </a>
-          <a href="manuals-revit-files/System Families - Wall Tags.pdf">
+          <a
+            href="manuals-revit-files/System Families - Wall Tags.pdf"
+            class="animals"
+          >
             <div class="card">
               <div class="card-description">Wall Tags</div>
             </div>
           </a>
           <a
             href="manuals-revit-files/System Families - Life Safety Stair Tag.pdf"
+            class="animals"
           >
             <div class="card">
               <div class="card-description">Life Safety Stair Tag</div>
@@ -267,7 +325,7 @@
           </a>
         </div>
       </div>
-      <div class="card-section">
+      <div class="card-section animals">
         <h3>
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -291,14 +349,17 @@
           Worksets
         </h3>
         <div class="card-container">
-          <a href="manuals-revit-files/Worksets - Standard Worksets2.pdf.pdf">
+          <a
+            href="manuals-revit-files/Worksets - Standard Worksets2.pdf.pdf"
+            class="animals"
+          >
             <div class="card">
               <div class="card-description">Standard Worksets</div>
             </div>
           </a>
         </div>
       </div>
-      <div class="card-section">
+      <div class="card-section animals">
         <h3>
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -319,6 +380,7 @@
         <div class="card-container">
           <a
             href="manuals-revit-files/Life Safety - Wall Codes - Color Coded.pdf"
+            class="animals"
           >
             <div class="card">
               <div class="card-description">Wall Codes</div>
@@ -326,7 +388,7 @@
           </a>
         </div>
       </div>
-      <div class="card-section">
+      <div class="card-section animals">
         <h3>
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -345,12 +407,18 @@
           Views
         </h3>
         <div class="card-container">
-          <a href="manuals-revit-files/Views - Standard Templates.pdf">
+          <a
+            href="manuals-revit-files/Views - Standard Templates.pdf"
+            class="animals"
+          >
             <div class="card">
               <div class="card-description">Standard Templates</div>
             </div>
           </a>
-          <a href="manuals-revit-files/Views - Naming Conventions.pdf">
+          <a
+            href="manuals-revit-files/Views - Naming Conventions.pdf"
+            class="animals"
+          >
             <div class="card">
               <div class="card-description">Naming Conventions</div>
             </div>
