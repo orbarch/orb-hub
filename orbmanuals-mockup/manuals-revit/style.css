@@ -48,7 +48,7 @@ a {
   padding-right: 12px;
 }
 
-/* search bar
+/* search bar */
 @media (max-width: 900px) {
   .header {
     flex-direction: column;
@@ -73,7 +73,7 @@ input:focus {
   border-radius: 4px;
 }
 
-.searchbar {
+/* .searchbar {
   display: flex;
   flex-direction: row;
   align-items: center;
