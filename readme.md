@@ -6,4 +6,3 @@ Private website for ORB Architecture internal use containing resource content fo
 
 - Create a React app.
 - New hire documents.
-- Add styling to search bar to Revit Manuals.

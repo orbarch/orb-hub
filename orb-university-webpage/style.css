@@ -129,6 +129,10 @@ input:focus {
   transition: 0.15s;
 }
 
+.clear-button:active {
+  transform: scale(0.9);
+}
+
 .orb-classes {
   padding-left: 10vw;
   padding-right: 10vw;

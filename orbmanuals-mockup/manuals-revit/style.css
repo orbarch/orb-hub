@@ -73,7 +73,7 @@ input:focus {
   border-radius: 4px;
 }
 
-/* .searchbar {
+.searchbar {
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -94,7 +94,11 @@ input:focus {
   color: #fff;
   background-color: rgb(140, 158, 110, 0.8);
   transition: 0.15s;
-} */
+}
+
+.clear-button:active {
+  transform: scale(0.9);
+}
 
 /* breadcrumbs */
 .vertical {

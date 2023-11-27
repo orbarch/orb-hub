@@ -113,6 +113,12 @@ a {
   background: #8c9e6e;
 }
 
+.card-container img {
+  width: auto;
+  height: 60px;
+  padding-bottom: 12px;
+}
+
 .card svg {
   width: auto;
   height: 60px;

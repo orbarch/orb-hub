@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>New Hire</title>
+    <!-- coded by Miguel Teran -->
+  </head>
+
+  <body>
+    <!-- breadcrumbs -->
+    <nav class="vertical">
+      <a href="../index.html">Home</a>
+      <span class="current">New Hire</span>
+    </nav>
+    <!-- breadcrumbs -->
+    <div class="container">
+      <div class="manuals-title">
+        <a href="../index.html">
+          <img
+            src="../files/Transparent-Green-Logo.png"
+            alt=""
+            class="orb-logo"
+          />
+        </a>
+        <h1 class="wip">🚧 WORK IN PROGRESS</h1>
+        <a href="files/Time Off Request Form.docx">
+          <h3>Download the request form meanwhile.</h3>
+        </a>
+        <h1>Time Off Request Form</h1>
+        <h3>Name</h3>
+        <input
+          id="searchbar"
+          onkeyup=""
+          type="text"
+          name="search"
+          placeholder="John Romero"
+        />
+        <h3>Number of days requested</h3>
+        <input type="number" />
+        <h3>Starting on</h3>
+        <input type="date" />
+        <h3>Ending on</h3>
+        <input type="date" />
+        <h3>Return to work date</h3>
+        <input type="date" />
+        <h3>Who will need to be notified</h3>
+        <input type="text" />
+        <h3>Request type</h3>
+        <form>
+          <legend>Please select your preferred contact method:</legend>
+          <div class="radio-button-container">
+            <div class="radio-button">
+              <input
+                type="radio"
+                class="radio-button__input"
+                id="radio1"
+                name="radio-group"
+              />
+              <label class="radio-button__label" for="radio1">
+                <span class="radio-button__custom"></span>
+                Paid Time Off (PTO)
+              </label>
+            </div>
+            <div class="radio-button">
+              <input
+                type="radio"
+                class="radio-button__input"
+                id="radio2"
+                name="radio-group"
+              />
+              <label class="radio-button__label" for="radio2">
+                <span class="radio-button__custom"></span>
+                Time Off without pay
+              </label>
+            </div>
+            <div class="radio-button">
+              <input
+                type="radio"
+                class="radio-button__input"
+                id="radio3"
+                name="radio-group"
+              />
+              <label class="radio-button__label" for="radio3">
+                <span class="radio-button__custom"></span>
+                Funeral / Bereavement
+              </label>
+            </div>
+            <div class="radio-button">
+              <input
+                type="radio"
+                class="radio-button__input"
+                id="radio4"
+                name="radio-group"
+              />
+              <label class="radio-button__label" for="radio4">
+                <span class="radio-button__custom"></span>
+                Other
+              </label>
+            </div>
+          </div>
+          <div>
+            <button type="submit">Submit</button>
+          </div>
+        </form>
+      </div>
+      <div class="card-container"></div>
+    </div>
+    <footer class="text-center text-lg-start">
+      <div class="text-center p-3">
+        Made with <a href="https://matias.ma/nsfw/">♥</a> by
+        <a class="text-dark" href="https://orbarch.com/">ORB Architecture</a>.
+        Copyright © 2023.
+      </div>
+    </footer>
+    <script src="script.js"></script>
+  </body>
+</html>
