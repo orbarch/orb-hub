@@ -184,14 +184,25 @@ input:focus {
 .title-description {
   padding-top: 6px;
   font-size: 12px;
+  max-width: 500px;
+  /* color: #808080; */
+}
+
+.title-date-tag {
+  display: flex;
+  flex-direction: column;
+  align-items: end;
+  padding-right: 12px;
   /* color: #808080; */
 }
 
 .title-date {
   font-size: 13px;
-  /* color: #808080; */
-  padding-right: 12px;
-  padding-left: 24px;
+}
+
+.title-tag {
+  font-size: 9px;
+  font-weight: 700;
 }
 
 video {
