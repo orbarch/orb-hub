@@ -48,6 +48,7 @@ a {
 
 .container {
   display: none;
+  padding-bottom: 50px;
 }
 
 .card-container {
@@ -55,6 +56,12 @@ a {
   flex-direction: row;
   gap: 14px;
   padding-top: 24px;
+}
+
+@media (max-width: 810px) {
+  .card-container {
+    flex-direction: column;
+  }
 }
 
 .card {
