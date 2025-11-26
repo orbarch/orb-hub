@@ -82,6 +82,13 @@ export const manualSections: StandardSection[] = [
         status: "approved",
         lastUpdated: "2025-10-28",
       },
+      {
+        title: "Arizona City Building Code Adoption",
+        description: "Building code adoption by city.",
+        link: "https://drive.google.com/file/d/1g_X4dcgBx_f2CZJ45cT4VdM85HB646Nh/view?usp=sharing",
+        status: "approved",
+        lastUpdated: "2025-11-26",
+      },
     ],
   },
   {
