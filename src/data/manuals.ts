@@ -13,6 +13,13 @@ export const manualSections: StandardSection[] = [
         lastUpdated: "2025-11-01",
       },
       {
+        title: "Revit Warnings",
+        description: "Importance of Revit warnings.",
+        link: "https://drive.google.com/file/d/12tn8kyiSiZ29V-uDoleT444_bjFxMjjk/view?usp=sharing",
+        status: "approved",
+        lastUpdated: "2025-12-02",
+      },
+      {
         title: "ORB Dimensioning",
         description: "Standards for placing dimensions.",
         link: "https://drive.google.com/file/d/1-cVz0DD77GKvJAv0ABBFCgV8boOBnmnb/view?usp=sharing",
@@ -295,7 +302,7 @@ export const manualSections: StandardSection[] = [
       },
       {
         title: "Copy Monitor",
-        description: "Model coordinatio between disciplines.",
+        description: "Model coordination between disciplines.",
         link: "https://drive.google.com/file/d/1jK0UXaFiqok2p9kMLIFP_3q8j30GF9Fa/view?usp=sharing",
         status: "approved",
         lastUpdated: "2025-10-25",
